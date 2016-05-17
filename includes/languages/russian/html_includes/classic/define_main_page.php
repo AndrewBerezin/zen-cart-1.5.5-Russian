@@ -1,0 +1,4 @@
+<a href="http://www.lulu.com/content/466605"><img src="images/large/e-start-book.gif" alt="get your manual today" title="Have you got yours yet? Join the 1000’s of Zen Cart users that have bought the only comprehensive owners manual !" /></a>
+<p>Этот текст находится в файле: <code> /languages/russian/html_includes/classic/define_main_page.php</code></p>
+<p>Вы можете быстро отредактировать содержимое в Редакторе страниц Админа, меню Инструменты, выбрав в выпадающем меню страницу define_main_page.</p>
+<p><strong>ЗАМЕЧАНИЕ: Обязательно перед этим заархивируйте файлы в<code> /languages/russian/html_includes/your_template</code></strong></p>
