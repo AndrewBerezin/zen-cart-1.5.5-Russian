@@ -457,7 +457,7 @@ define('WARN_DATABASE_VERSION_PROBLEM','true'); //set to false to turn off warni
 define('WARNING_ADMIN_DOWN_FOR_MAINTENANCE', '<strong>ПРЕДУПРЕЖДЕНИЕ:</strong> В настоящий момент сайт установлен в состояние "Технические работы"...<br />Замечание: Вы не сможите тестировать большинство модулей оплаты и доставки.');
 define('WARNING_BACKUP_CFG_FILES_TO_DELETE', 'ПРЕДУПРЕЖДЕНИЕ: Эти файлы должны быть удалены из соображений безопасности: ');
 define('WARNING_INSTALL_DIRECTORY_EXISTS', 'ПРЕДУПРЕЖДЕНИЕ БЕЗОПАСНОСТИ: Директория установки обнаружена в: ' . DIR_FS_CATALOG . 'zc_install. Пожалуйста удалите эту директорию из соображений безопасности.');
-define('WARNING_CONFIG_FILE_WRITEABLE', 'ПРЕДУПРЕЖДЕНИЕ: Ваш конфигурационный файл: %sincludes/configure.php. Это потенциальная проблема безопасности - пожалуйста установите правильные права доступа к данному файлу (только чтение, обычно CHMOD 644 или 444).  <a href="http://tutorials.zen-cart.com/index.php?article=90" target="_blank">Смотри статью в ФАК</a>');
+define('WARNING_CONFIG_FILE_WRITEABLE', 'ПРЕДУПРЕЖДЕНИЕ: Ваш конфигурационный файл: %s доступен на запись. Это потенциальная проблема безопасности - пожалуйста установите правильные права доступа к данному файлу (только чтение, обычно CHMOD 644 или 444).  <a href="http://tutorials.zen-cart.com/index.php?article=90" target="_blank">Смотри статью в ФАК</a>');
 define('WARNING_COULD_NOT_LOCATE_LANG_FILE', 'ПРЕДУПРЕЖДЕНИЕ: Не могу найти языковой файл: ');
 define('ERROR_MODULE_REMOVAL_PROHIBITED', 'ОШИБКА: Удаление модуля запрещено: ');
 define('WARNING_REVIEW_ROGUE_ACTIVITY', 'ПРЕДУПРЕЖДЕНИЕ: Пожалуйста ознакомьтесь с вероятной активностью XSS:');
