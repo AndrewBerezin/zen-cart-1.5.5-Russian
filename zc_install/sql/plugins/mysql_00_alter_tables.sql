@@ -14,3 +14,4 @@ ALTER TABLE categories_description CHANGE categories_name categories_name VARCHA
 ALTER TABLE ezpages CHANGE pages_html_text pages_html_text LONGTEXT;
 ALTER TABLE db_cache CHANGE cache_data cache_data MEDIUMBLOB DEFAULT NULL;
 ALTER TABLE zones CHANGE zone_name zone_name VARCHAR(128);
+ALTER TABLE zones CHANGE zone_code zone_code VARCHAR(128);
