@@ -2,12 +2,12 @@
 # * SQL Localization script - Translate countries
 # * @package Installer
 # * @access private
-# * @copyright Copyright 2004-2009 Andrew Berezin eCommerce-Service.com
-# * @copyright Copyright 2003-2009 Zen Cart Development Team
+# * @copyright Copyright 2004-2016 Andrew Berezin eCommerce-Service.com
+# * @copyright Copyright 2003-2016 Zen Cart Development Team
 # * @copyright Portions Copyright 2003 osCommerce
 # * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
 # * @Localization: Andrew Berezin http://ecommerce-service.com
-# * @version $Id: mysql_50_translate_countries.sql 1.3.8a 17.12.2007 11:02 AndrewBerezin $
+# * @version $Id: mysql_30_translate_countries.sql 1.5.5a 02.08.2016 11:11:25 AndrewBerezin $
 
 ## http://www.iso.org/iso/en/prods-services/iso3166ma/02iso-3166-code-lists/list-en1.html
 ## http://www.magnum-opus.ru/wiki/ISO-3166-1
@@ -251,3 +251,15 @@ UPDATE countries SET countries_name='Заир' WHERE countries_iso_code_3='ZAR';
 UPDATE countries SET countries_name='Замбия' WHERE countries_iso_code_3='ZMB';
 UPDATE countries SET countries_name='Зимбабве' WHERE countries_iso_code_3='ZWE';
 UPDATE countries SET countries_name='Эландские Острова' WHERE countries_iso_code_3='ALA';
+UPDATE countries SET countries_name='Бонэйр, Синт-Эстатиус и Саба' WHERE countries_iso_code_3='BES';
+UPDATE countries SET countries_name='Кюрасао' WHERE countries_iso_code_3='CUW';
+UPDATE countries SET countries_name='Гернси' WHERE countries_iso_code_3='GGY';
+UPDATE countries SET countries_name='Остров Мэн	' WHERE countries_iso_code_3='IMN';
+UPDATE countries SET countries_name='Джерси' WHERE countries_iso_code_3='JEY';
+UPDATE countries SET countries_name='Черногория' WHERE countries_iso_code_3='MNE';
+UPDATE countries SET countries_name='Государство Палестина' WHERE countries_iso_code_3='PSE';
+UPDATE countries SET countries_name='Румыния' WHERE countries_iso_code_3='ROU';
+UPDATE countries SET countries_name='Сербия' WHERE countries_iso_code_3='SRB';
+UPDATE countries SET countries_name='Синт-Мартен' WHERE countries_iso_code_3='SXM';
+UPDATE countries SET countries_name='Южный Судан' WHERE countries_iso_code_3='SSD';
+UPDATE countries SET countries_name='Восточный Тимор' WHERE countries_iso_code_3='TLS';

@@ -12,6 +12,7 @@
 # * @Localization: Andrew Berezin eCommerce-Service.com
 # * @version $Id: mysql_31_zones_ru.sql 1.4 26.07.2015 15:48:40 AndrewBerezin eCommerce-Service.com $
 
+ALTER TABLE zones CHANGE zone_name zone_name VARCHAR(128);
 INSERT INTO zones (zone_country_id, zone_code, zone_name) VALUES (176, '01', 'Республика Адыгея (Адыгея)');
 INSERT INTO zones (zone_country_id, zone_code, zone_name) VALUES (176, '04', 'Республика Алтай');
 INSERT INTO zones (zone_country_id, zone_code, zone_name) VALUES (176, '02', 'Республика Башкортостан');
