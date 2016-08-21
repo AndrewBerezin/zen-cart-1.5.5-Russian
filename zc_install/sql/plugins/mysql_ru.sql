@@ -28,7 +28,8 @@ ALTER TABLE zones CHANGE zone_code zone_code VARCHAR(128);
 # Add Russian language
 INSERT INTO languages (languages_id, name, code, image, directory, sort_order) VALUES (NULL,'Russian','ru','icon.gif','russian',1);
 UPDATE languages SET sort_order=2 WHERE languages_id=1;
-UPDATE configuration SET configuration_value='ru' WHERE configuration_key='DEFAULT_LANGUAGE';#
+UPDATE configuration SET configuration_value='ru' WHERE configuration_key='DEFAULT_LANGUAGE';
+#
 # * SQL Localization script - Translate configuration_group table
 # * @package Installer
 # * @access private
@@ -36,7 +37,7 @@ UPDATE configuration SET configuration_value='ru' WHERE configuration_key='DEFAU
 # * @copyright Copyright 2003-2009 Zen Cart Development Team
 # * @copyright Portions Copyright 2003 osCommerce
 # * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
-# * @Localization: Andrew Berezin  eCommerce-Service.com
+# * @Localization: Andrew Berezin eCommerce-Service.com
 # * @version $Id: mysql_20_translate_configuration_group.sql 1.3.8a 17.12.2007 11:05 AndrewBerezin $
 
 UPDATE configuration_group SET configuration_group_title='Настройки магазина', configuration_group_description='Общая информация о магазине' WHERE configuration_group_id='1';
@@ -565,7 +566,7 @@ UPDATE configuration SET configuration_title='EZ-страницы с отклю�
 UPDATE configuration SET configuration_title='EZ-страницы с отключением правой колонки страницы', configuration_description='EZ-страницы с отключением правой колонки страницы' WHERE configuration_key='EZPAGES_DISABLE_RIGHTCOLUMN_DISPLAY_LIST';
 UPDATE configuration SET configuration_title='Определить статус Страница-Не-Найдена', configuration_description='Разрешить определение текста страницы Страница-Не-Найдена черезе Редактирование страниц?<br />0= Запретить<br />1= Разрешить' WHERE configuration_key='DEFINE_PAGE_NOT_FOUND_STATUS';
 UPDATE configuration SET configuration_title='Статус ссылок в шапке магазина', configuration_description='Включить ссылки в шапке магазина?<br />0= выкл<br />1= вкл<br />2= выкл только для домашней страницы' WHERE configuration_key='DEFINE_BREADCRUMB_STATUS';
-UPDATE configuration SET configuration_title='Использовать раздельную страницу входа', configuration_description='Страница входа может отображаться в двух режимах: Раздельном и Вертикальном.<br />В Раздельном режиме функции создания учётной записи доступны на отдельной странице, загружаемо после нажатия на кнопку.  В Вертикальном режиме функции создания учётной записи доступны на ниже, на этой-же странице.<br />По умолчанию: False' WHERE configuration_key='USE_SPLIT_LOGIN_MODE';
+UPDATE configuration SET configuration_title='Использовать раздельную страницу входа', configuration_description='Страница входа может отображаться в двух режимах: Раздельном и Вертикальном.<br />В Раздельном режиме функции создания учётной записи доступны на отдельной странице, загружаемо после нажатия на кнопку. В Вертикальном режиме функции создания учётной записи доступны на ниже, на этой-же странице.<br />По умолчанию: False' WHERE configuration_key='USE_SPLIT_LOGIN_MODE';
 UPDATE configuration SET configuration_title='Статус кредитных карт - SOLO', configuration_description='Принимать карты SOLO 0= нет 1= да' WHERE configuration_key='CC_ENABLED_SOLO';
 UPDATE configuration SET configuration_title='Статус кредитных карт - Switch', configuration_description='Принимать карты SWITCH 0= нет 1= да' WHERE configuration_key='CC_ENABLED_SWITCH';
 UPDATE configuration SET configuration_title='Статус кредитных карт - Maestro', configuration_description='Принимать карты MAESTRO 0= нет 1= да' WHERE configuration_key='CC_ENABLED_MAESTRO';
@@ -579,7 +580,7 @@ UPDATE configuration SET configuration_title='Статус кредитных к
 # * @copyright Copyright 2003-2009 Zen Cart Development Team
 # * @copyright Portions Copyright 2003 osCommerce
 # * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
-# * @Localization: Andrew Berezin  eCommerce-Service.com
+# * @Localization: Andrew Berezin eCommerce-Service.com
 # * @version $Id: mysql_22_translate_product_type_layout.sql 1.3.8a 17.12.2007 11:02 AndrewBerezin $
 
 UPDATE product_type_layout SET configuration_title='Показывать артикул', configuration_description='Показывать артикул товара на странице товара. 0 - нет, 1 - да.' WHERE configuration_key='SHOW_PRODUCT_INFO_MODEL';
@@ -599,7 +600,7 @@ UPDATE product_type_layout SET configuration_title='Показывать кно�
 UPDATE product_type_layout SET configuration_title='Показывать "Бесплатная доставка"', configuration_description='Показывать картинку/текст "Бесплатная доставка" в каталоге?' WHERE configuration_key='SHOW_PRODUCT_INFO_ALWAYS_FREE_SHIPPING_IMAGE_SWITCH';
 UPDATE product_type_layout SET configuration_title='Класс налогов по умолчанию', configuration_description='Какой класс налогов по умолчанию использовать при добавлении новых товаров?' WHERE configuration_key='DEFAULT_PRODUCT_TAX_CLASS_ID';
 UPDATE product_type_layout SET configuration_title='Виртуальный товар по умолчанию', configuration_description='Отмечать по умолчанию новый товар как виртуальный?' WHERE configuration_key='DEFAULT_PRODUCT_PRODUCTS_VIRTUAL';
-UPDATE product_type_layout SET configuration_title='Бесплатная доставка по умолчанию', configuration_description='Присваиваить новым товарам по умолчанию статус "Бесплатная доставка"<br />Yes, всегда устанавливать Бесплатную доставку<br />No, всегда отключать бесплатную доставку<br />Special, товар/файл  требует доставки' WHERE configuration_key='DEFAULT_PRODUCT_PRODUCTS_IS_ALWAYS_FREE_SHIPPING';
+UPDATE product_type_layout SET configuration_title='Бесплатная доставка по умолчанию', configuration_description='Присваиваить новым товарам по умолчанию статус "Бесплатная доставка"<br />Yes, всегда устанавливать Бесплатную доставку<br />No, всегда отключать бесплатную доставку<br />Special, товар/файл требует доставки' WHERE configuration_key='DEFAULT_PRODUCT_PRODUCTS_IS_ALWAYS_FREE_SHIPPING';
 UPDATE product_type_layout SET configuration_title='Показывать артикул', configuration_description='Показывать артикул товара на странице товара. 0 - нет, 1 - да.' WHERE configuration_key='SHOW_PRODUCT_MUSIC_INFO_MODEL';
 UPDATE product_type_layout SET configuration_title='Показывать вес', configuration_description='Показывать вес товара на странице товара. 0 - нет, 1 - да.' WHERE configuration_key='SHOW_PRODUCT_MUSIC_INFO_WEIGHT';
 UPDATE product_type_layout SET configuration_title='Показывать вес атрибутов', configuration_description='Показывать вес атрибутов на странице товара. 0 - нет, 1 - да.' WHERE configuration_key='SHOW_PRODUCT_MUSIC_INFO_WEIGHT_ATTRIBUTES';
@@ -618,7 +619,7 @@ UPDATE product_type_layout SET configuration_title='Показывать кно�
 UPDATE product_type_layout SET configuration_title='Показывать "Бесплатная доставка"', configuration_description='Показывать картинку/текст "Бесплатная доставка" в каталоге?' WHERE configuration_key='SHOW_PRODUCT_MUSIC_INFO_ALWAYS_FREE_SHIPPING_IMAGE_SWITCH';
 UPDATE product_type_layout SET configuration_title='Класс налогов по умолчанию', configuration_description='Какой класс налогов по умолчанию использовать при добавлении новых товаров?' WHERE configuration_key='DEFAULT_PRODUCT_MUSIC_TAX_CLASS_ID';
 UPDATE product_type_layout SET configuration_title='Виртуальный товар по умолчанию', configuration_description='Отмечать по умолчанию новый товар как виртуальный?' WHERE configuration_key='DEFAULT_PRODUCT_MUSIC_PRODUCTS_VIRTUAL';
-UPDATE product_type_layout SET configuration_title='Бесплатная доставка по умолчанию', configuration_description='Присваиваить новым товарам по умолчанию статус "Бесплатная доставка"<br />Yes, всегда устанавливать Бесплатную доставку<br />No, всегда отключать бесплатную доставку<br />Special, товар/файл  требует доставки' WHERE configuration_key='DEFAULT_PRODUCT_MUSIC_PRODUCTS_IS_ALWAYS_FREE_SHIPPING';
+UPDATE product_type_layout SET configuration_title='Бесплатная доставка по умолчанию', configuration_description='Присваиваить новым товарам по умолчанию статус "Бесплатная доставка"<br />Yes, всегда устанавливать Бесплатную доставку<br />No, всегда отключать бесплатную доставку<br />Special, товар/файл требует доставки' WHERE configuration_key='DEFAULT_PRODUCT_MUSIC_PRODUCTS_IS_ALWAYS_FREE_SHIPPING';
 UPDATE product_type_layout SET configuration_title='Показывать количество отзывов', configuration_description='Показывать количество отзывов на странице товара. 0 - нет, 1 - да.' WHERE configuration_key='SHOW_DOCUMENT_GENERAL_INFO_REVIEWS_COUNT';
 UPDATE product_type_layout SET configuration_title='Показывать кнопку Отзывы', configuration_description='Показывать кнопку Отзывы на странице товара. 0 - нет, 1 - да.' WHERE configuration_key='SHOW_DOCUMENT_GENERAL_INFO_REVIEWS';
 UPDATE product_type_layout SET configuration_title='Показывать дату поступления', configuration_description='Показывать дату поступления на склад на странице товара. 0 - нет, 1 - да.' WHERE configuration_key='SHOW_DOCUMENT_GENERAL_INFO_DATE_AVAILABLE';
@@ -643,7 +644,7 @@ UPDATE product_type_layout SET configuration_title='Показывать кно�
 UPDATE product_type_layout SET configuration_title='Показывать "Бесплатная доставка"', configuration_description='Показывать картинку/текст "Бесплатная доставка" в каталоге?' WHERE configuration_key='SHOW_DOCUMENT_PRODUCT_INFO_ALWAYS_FREE_SHIPPING_IMAGE_SWITCH';
 UPDATE product_type_layout SET configuration_title='Класс налогов по умолчанию', configuration_description='Какой класс налогов по умолчанию использовать при добавлении новых товаров?' WHERE configuration_key='DEFAULT_DOCUMENT_PRODUCT_TAX_CLASS_ID';
 UPDATE product_type_layout SET configuration_title='Виртуальный товар по умолчанию', configuration_description='Отмечать по умолчанию новый товар как виртуальный?' WHERE configuration_key='DEFAULT_DOCUMENT_PRODUCT_PRODUCTS_VIRTUAL';
-UPDATE product_type_layout SET configuration_title='Бесплатная доставка по умолчанию', configuration_description='Присваиваить новым товарам по умолчанию статус "Бесплатная доставка"<br />Yes, всегда устанавливать Бесплатную доставку<br />No, всегда отключать бесплатную доставку<br />Special, товар/файл  требует доставки' WHERE configuration_key='DEFAULT_DOCUMENT_PRODUCT_PRODUCTS_IS_ALWAYS_FREE_SHIPPING';
+UPDATE product_type_layout SET configuration_title='Бесплатная доставка по умолчанию', configuration_description='Присваиваить новым товарам по умолчанию статус "Бесплатная доставка"<br />Yes, всегда устанавливать Бесплатную доставку<br />No, всегда отключать бесплатную доставку<br />Special, товар/файл требует доставки' WHERE configuration_key='DEFAULT_DOCUMENT_PRODUCT_PRODUCTS_IS_ALWAYS_FREE_SHIPPING';
 UPDATE product_type_layout SET configuration_title='Показывать артикул', configuration_description='Показывать артикул товара на странице товара. 0 - нет, 1 - да.' WHERE configuration_key='SHOW_PRODUCT_FREE_SHIPPING_INFO_MODEL';
 UPDATE product_type_layout SET configuration_title='Показывать вес', configuration_description='Показывать вес товара на странице товара. 0 - нет, 1 - да.' WHERE configuration_key='SHOW_PRODUCT_FREE_SHIPPING_INFO_WEIGHT';
 UPDATE product_type_layout SET configuration_title='Показывать вес атрибутов', configuration_description='Показывать вес атрибутов на странице товара. 0 - нет, 1 - да.' WHERE configuration_key='SHOW_PRODUCT_FREE_SHIPPING_INFO_WEIGHT_ATTRIBUTES';
@@ -830,7 +831,8 @@ UPDATE paypal_payment_status SET payment_status_name = 'Полностью из�
 # * @Localization: Andrew Berezin http://ecommerce-service.com
 # * @version $Id: mysql_30_disable_countries.sql 1.5.5a 02.08.2016 11:11:25 AndrewBerezin $
 
-UPDATE countries SET status='0' WHERE countries_iso_code_3!='RUS';#
+UPDATE countries SET status='0' WHERE countries_iso_code_3!='RUS';
+#
 # * SQL Localization script - Translate countries
 # * @package Installer
 # * @access private
@@ -1086,7 +1088,7 @@ UPDATE countries SET countries_name='Эландские Острова' WHERE co
 UPDATE countries SET countries_name='Бонэйр, Синт-Эстатиус и Саба' WHERE countries_iso_code_3='BES';
 UPDATE countries SET countries_name='Кюрасао' WHERE countries_iso_code_3='CUW';
 UPDATE countries SET countries_name='Гернси' WHERE countries_iso_code_3='GGY';
-UPDATE countries SET countries_name='Остров Мэн	' WHERE countries_iso_code_3='IMN';
+UPDATE countries SET countries_name='Остров Мэн ' WHERE countries_iso_code_3='IMN';
 UPDATE countries SET countries_name='Джерси' WHERE countries_iso_code_3='JEY';
 UPDATE countries SET countries_name='Черногория' WHERE countries_iso_code_3='MNE';
 UPDATE countries SET countries_name='Государство Палестина' WHERE countries_iso_code_3='PSE';
@@ -1106,7 +1108,8 @@ UPDATE countries SET countries_name='Восточный Тимор' WHERE countr
 # * @Localization: Andrew Berezin http://ecommerce-service.com
 # * @version $Id: mysql_31_delete_zones.sql 1.5.5a 02.08.2016 11:11:25 AndrewBerezin $
 
-DELETE FROM zones WHERE zone_country_id NOT IN (176);#
+DELETE FROM zones WHERE zone_country_id NOT IN (176);
+#
 # * SQL Localization script - Add zones for Russian Federation countries
 # * @package Installer
 # * @access private
@@ -1215,7 +1218,7 @@ INSERT INTO zones (zone_country_id, zone_code, zone_name) VALUES (176, '92', 'С
 # * @copyright Portions Copyright 2003 osCommerce
 # * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
 # * @Localization: Andrew Berezin http://ecommerce-service.com
-# * @version $Id: mysql_52_zones_ex_ussr.sql 1.2 26.07.2015 15:48:59 AndrewBerezin  eCommerce-Service.com $
+# * @version $Id: mysql_52_zones_ex_ussr.sql 1.2 26.07.2015 15:48:59 AndrewBerezin eCommerce-Service.com $
 
 # 'Armenia','AM','ARM'
 INSERT INTO zones (zone_country_id, zone_code, zone_name) VALUES (011, 'Араратская область', 'Араратская область');
@@ -1510,7 +1513,8 @@ UPDATE configuration SET configuration_value = '' WHERE configuration_key = 'MOD
 # * @version $Id: mysql_91_set_defaults.sql 1.3.8a 17.12.2007 10:47 AndrewBerezin $
 
 # Set RU country for Create account default country
-UPDATE configuration SET configuration_value = '176' WHERE configuration_key = 'SHOW_CREATE_ACCOUNT_DEFAULT_COUNTRY';#
+UPDATE configuration SET configuration_value = '176' WHERE configuration_key = 'SHOW_CREATE_ACCOUNT_DEFAULT_COUNTRY';
+#
 # * SQL Localization script - Set taxes classes and ratings
 # * @package Installer
 # * @access private
@@ -1609,8 +1613,8 @@ UPDATE products_options SET products_options_name = 'Версия' WHERE product
 # * @Localization: Andrew Berezin http://ecommerce-service.com
 # * @version $Id: mysql_99_tuninig.sql 1.3.9g 30.09.2010 10:23:30 AndrewBerezin $
 
-UPDATE configuration SET configuration_value = 'True' WHERE  configuration_key = 'SESSION_FORCE_COOKIE_USE' LIMIT 1 ;
-UPDATE configuration SET configuration_value = '0' WHERE  configuration_key = 'META_TAG_INCLUDE_PRICE' LIMIT 1 ;
-UPDATE configuration SET configuration_value = '0' WHERE  configuration_key = 'META_TAG_INCLUDE_MODEL' LIMIT 1 ;
+UPDATE configuration SET configuration_value = 'True' WHERE configuration_key = 'SESSION_FORCE_COOKIE_USE' LIMIT 1 ;
+UPDATE configuration SET configuration_value = '0' WHERE configuration_key = 'META_TAG_INCLUDE_PRICE' LIMIT 1 ;
+UPDATE configuration SET configuration_value = '0' WHERE configuration_key = 'META_TAG_INCLUDE_MODEL' LIMIT 1 ;
 UPDATE configuration SET configuration_value = '' WHERE configuration_key ='IMAGE_SUFFIX_MEDIUM' LIMIT 1 ;
 UPDATE configuration SET configuration_value = '' WHERE configuration_key ='IMAGE_SUFFIX_LARGE' LIMIT 1 ;
