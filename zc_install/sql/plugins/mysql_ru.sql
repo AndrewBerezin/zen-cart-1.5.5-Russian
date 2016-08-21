@@ -1,5 +1,5 @@
 #
-# * SQL Localization script - Prepare tables for Localization
+# * SQL Localization script
 # * @package Installer
 # * @access private
 # * @copyright Copyright 2004-2016 Andrew Berezin eCommerce-Service.com
@@ -7,39 +7,21 @@
 # * @copyright Portions Copyright 2003 osCommerce
 # * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
 # * @Localization: Andrew Berezin http://ecommerce-service.com
-# * @version $Id: mysql_00_alter_tables.sql 1.5.5a 20.08.2016 19:14:31 AndrewBerezin $
+# * @version $Id: mysql_ru.sql 1.5.5a 22.08.2016 1:05:00 AndrewBerezin $
 
+# alter_tables
 ALTER TABLE products_description CHANGE products_name products_name VARCHAR(255);
 ALTER TABLE categories_description CHANGE categories_name categories_name VARCHAR(255);
 ALTER TABLE ezpages CHANGE pages_html_text pages_html_text LONGTEXT;
 ALTER TABLE zones CHANGE zone_name zone_name VARCHAR(128);
 ALTER TABLE zones CHANGE zone_code zone_code VARCHAR(128);
-#
-# * SQL Localization script - Add ru language and set it as default languages
-# * @package Installer
-# * @access private
-# * @copyright Copyright 2004-2016 Andrew Berezin eCommerce-Service.com
-# * @copyright Copyright 2003-2016 Zen Cart Development Team
-# * @copyright Portions Copyright 2003 osCommerce
-# * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
-# * @Localization: Andrew Berezin http://ecommerce-service.com
-# * @version $Id: mysql_01_ru.sql 1.5.5a 21.08.2016 1:01:07 AndrewBerezin $
 
-# Add Russian language
+# Add Russian language and set it as default languages
 INSERT INTO languages (languages_id, name, code, image, directory, sort_order) VALUES (NULL,'Russian','ru','icon.gif','russian',1);
 UPDATE languages SET sort_order=2 WHERE languages_id=1;
 UPDATE configuration SET configuration_value='ru' WHERE configuration_key='DEFAULT_LANGUAGE';
-#
-# * SQL Localization script - Translate configuration_group table
-# * @package Installer
-# * @access private
-# * @copyright Copyright 2004-2009 Andrew Berezin eCommerce-Service.com
-# * @copyright Copyright 2003-2009 Zen Cart Development Team
-# * @copyright Portions Copyright 2003 osCommerce
-# * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
-# * @Localization: Andrew Berezin eCommerce-Service.com
-# * @version $Id: mysql_20_translate_configuration_group.sql 1.3.8a 17.12.2007 11:05 AndrewBerezin $
 
+# Translate configuration_group table
 UPDATE configuration_group SET configuration_group_title='Настройки магазина', configuration_group_description='Общая информация о магазине' WHERE configuration_group_id='1';
 UPDATE configuration_group SET configuration_group_title='Минимальные значения', configuration_group_description='Минимальные значения для функций и данных' WHERE configuration_group_id='2';
 UPDATE configuration_group SET configuration_group_title='Максимальные значения', configuration_group_description='Максимальные значения для функций и данных' WHERE configuration_group_id='3';
@@ -66,17 +48,8 @@ UPDATE configuration_group SET configuration_group_title='Список всех 
 UPDATE configuration_group SET configuration_group_title='Вид главной страницы', configuration_group_description='Опции отображения (вида) главной страницы' WHERE configuration_group_id='24';
 UPDATE configuration_group SET configuration_group_title='Статус страниц', configuration_group_description='Определение статуса страниц' WHERE configuration_group_id='25';
 UPDATE configuration_group SET configuration_group_title='Настройки EZ-страниц', configuration_group_description='Настройки EZ-страниц' WHERE configuration_group_id='30';
-#
-# * SQL Localization script - Translate configuration table
-# * @package Installer
-# * @access private
-# * @copyright Copyright 2004-2009 Andrew Berezin eCommerce-Service.com
-# * @copyright Copyright 2003-2009 Zen Cart Development Team
-# * @copyright Portions Copyright 2003 osCommerce
-# * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
-# * @Localization: Andrew Berezin http://ecommerce-service.com
-# * @version $Id: mysql_21_translate_configuration.sql 1.3.8a 12.04.2007 21:17 AndrewBerezin $
 
+# Translate configuration table
 UPDATE configuration SET configuration_title='Название магазина', configuration_description='Название вашего магазина' WHERE configuration_key='STORE_NAME';
 UPDATE configuration SET configuration_title='Владелец магазина', configuration_description='Владелец вашего магазина' WHERE configuration_key='STORE_OWNER';
 UPDATE configuration SET configuration_title='Страна', configuration_description='Страна в которой работает магазин <br /><br /><strong>Внимание: Не забудьте обновить область магазина</strong>' WHERE configuration_key='STORE_COUNTRY';
@@ -570,19 +543,9 @@ UPDATE configuration SET configuration_title='Использовать разд�
 UPDATE configuration SET configuration_title='Статус кредитных карт - SOLO', configuration_description='Принимать карты SOLO 0= нет 1= да' WHERE configuration_key='CC_ENABLED_SOLO';
 UPDATE configuration SET configuration_title='Статус кредитных карт - Switch', configuration_description='Принимать карты SWITCH 0= нет 1= да' WHERE configuration_key='CC_ENABLED_SWITCH';
 UPDATE configuration SET configuration_title='Статус кредитных карт - Maestro', configuration_description='Принимать карты MAESTRO 0= нет 1= да' WHERE configuration_key='CC_ENABLED_MAESTRO';
-
 UPDATE configuration SET configuration_title='Статус кредитных карт - Maestro', configuration_description='Принимать карты MAESTRO 0= нет 1= да' WHERE configuration_key='ORDER_COMMENTS_PACKING_SLIP';
-#
-# * SQL Localization script - Translate product_type_layout table
-# * @package Installer
-# * @access private
-# * @copyright Copyright 2004-2009 Andrew Berezin eCommerce-Service.com
-# * @copyright Copyright 2003-2009 Zen Cart Development Team
-# * @copyright Portions Copyright 2003 osCommerce
-# * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
-# * @Localization: Andrew Berezin eCommerce-Service.com
-# * @version $Id: mysql_22_translate_product_type_layout.sql 1.3.8a 17.12.2007 11:02 AndrewBerezin $
 
+# Translate product_type_layout table
 UPDATE product_type_layout SET configuration_title='Показывать артикул', configuration_description='Показывать артикул товара на странице товара. 0 - нет, 1 - да.' WHERE configuration_key='SHOW_PRODUCT_INFO_MODEL';
 UPDATE product_type_layout SET configuration_title='Показывать вес', configuration_description='Показывать вес товара на странице товара. 0 - нет, 1 - да.' WHERE configuration_key='SHOW_PRODUCT_INFO_WEIGHT';
 UPDATE product_type_layout SET configuration_title='Показывать вес атрибутов', configuration_description='Показывать вес атрибутов на странице товара. 0 - нет, 1 - да.' WHERE configuration_key='SHOW_PRODUCT_INFO_WEIGHT_ATTRIBUTES';
@@ -726,16 +689,6 @@ UPDATE product_type_layout SET configuration_title='Атрибуты включ�
 UPDATE product_type_layout SET configuration_title='Атрибут требуется', configuration_description='Атрибут требуется<br />Атрибут требуется для текста<br />0= Нет 1= Да' WHERE configuration_key='DEFAULT_PRODUCT_FREE_SHIPPING_ATTRIBUTES_REQUIRED';
 UPDATE product_type_layout SET configuration_title='Атрибуты - префикс цены', configuration_description='Атрибуты - префикс цены<br />Префикс цены у атрибутов по умолчанию<br />Пробел, + или -' WHERE configuration_key='DEFAULT_PRODUCT_FREE_SHIPPING_PRICE_PREFIX';
 UPDATE product_type_layout SET configuration_title='Атрибуты - префикс веса', configuration_description='Атрибуты - префикс веса<br />Префикс веса у атрибутов по умолчанию<br />Пробел, + или -' WHERE configuration_key='DEFAULT_PRODUCT_FREE_SHIPPING_PRODUCTS_ATTRIBUTES_WEIGHT_PREFIX';
-#
-# * SQL Localization script - Translate orders_status table
-# * @package Installer
-# * @access private
-# * @copyright Copyright 2004-2009 Andrew Berezin eCommerce-Service.com
-# * @copyright Copyright 2003-2009 Zen Cart Development Team
-# * @copyright Portions Copyright 2003 osCommerce
-# * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
-# * @Localization: Andrew Berezin http://ecommerce-service.com
-# * @version $Id: mysql_23_translate_orders_status.sql 1.3.8a 17.12.2007 11:21 AndrewBerezin $
 
 # Translate data for table 'orders_status'
 SELECT @languages_ru_id:=languages_id FROM languages WHERE code='ru';
@@ -744,16 +697,6 @@ UPDATE orders_status SET orders_status_name = 'Ожидает проверки' 
 UPDATE orders_status SET orders_status_name = 'Выполняется' WHERE orders_status_name = 'Processing' AND language_id=@languages_ru_id;
 UPDATE orders_status SET orders_status_name = 'Доставлен' WHERE orders_status_name = 'Delivered' AND language_id=@languages_ru_id;
 UPDATE orders_status SET orders_status_name = 'Изменён' WHERE orders_status_name = 'Update' AND language_id=@languages_ru_id;
-#
-# * SQL Localization script - Translate product_types table
-# * @package Installer
-# * @access private
-# * @copyright Copyright 2004-2009 Andrew Berezin eCommerce-Service.com
-# * @copyright Copyright 2003-2009 Zen Cart Development Team
-# * @copyright Portions Copyright 2003 osCommerce
-# * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
-# * @Localization: Andrew Berezin http://ecommerce-service.com
-# * @version $Id: mysql_24_translate_product_types.sql 1.3.8a 17.12.2007 11:21 AndrewBerezin $
 
 # Translate data for table 'product_types'
 UPDATE product_types SET type_name='Товар - Главный' WHERE type_id=1;
@@ -761,16 +704,6 @@ UPDATE product_types SET type_name='Товар - Музыка' WHERE type_id=2;
 UPDATE product_types SET type_name='Документ - Главный' WHERE type_id=3;
 UPDATE product_types SET type_name='Документ - Товар' WHERE type_id=4;
 UPDATE product_types SET type_name='Товар - Бесплатная отгрузка' WHERE type_id=5;
-#
-# * SQL Localization script - Translate products_options_types table
-# * @package Installer
-# * @access private
-# * @copyright Copyright 2004-2016 Andrew Berezin eCommerce-Service.com
-# * @copyright Copyright 2003-2016 Zen Cart Development Team
-# * @copyright Portions Copyright 2003 osCommerce
-# * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
-# * @Localization: Andrew Berezin http://ecommerce-service.com
-# * @version $Id: mysql_25_translate_products_options.sql 1.5.5a 21.08.2016 0:34:56 AndrewBerezin $
 
 # Translate data for table 'products_options_types'
 SELECT @languages_ru_id:=languages_id FROM languages WHERE code='ru';
@@ -782,18 +715,8 @@ UPDATE products_options_types SET products_options_types_name='Переключ�
 UPDATE products_options_types SET products_options_types_name='Флажок' WHERE products_options_types_id=3;
 UPDATE products_options_types SET products_options_types_name='Файл' WHERE products_options_types_id=4;
 UPDATE products_options_types SET products_options_types_name='Только для чтения' WHERE products_options_types_id=5;
-#
-# * SQL Localization script - Translate query_builder table
-# * @package Installer
-# * @access private
-# * @copyright Copyright 2004-2009 Andrew Berezin eCommerce-Service.com
-# * @copyright Copyright 2003-2009 Zen Cart Development Team
-# * @copyright Portions Copyright 2003 osCommerce
-# * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
-# * @Localization: Andrew Berezin http://ecommerce-service.com
-# * @version $Id: mysql_26_translate_query_builder.sql 1.3.8a 17.12.2007 11:21 AndrewBerezin $
 
-# Translate the default queries for "all customers" and "all newsletter subscribers"
+# Translate query_builder table - the default queries for "all customers" and "all newsletter subscribers"
 UPDATE query_builder SET query_name='Все покупатели', query_description='Выдает имена и email адреса всех покупателей для массовой рассылки emails' WHERE query_id=1;
 UPDATE query_builder SET query_name='Все подписчики на рассылку', query_description='Выдает имена и email адреса подписчиков на рассылку' WHERE query_id=2;
 UPDATE query_builder SET query_name='Неактивные покупатели (>3месяца) (Подписчики)', query_description='Подписчики которые что-то приобрели, но последних три месяца ничего не приобретали' WHERE query_id=3;
@@ -801,16 +724,6 @@ UPDATE query_builder SET query_name='Активные покупатели за 
 UPDATE query_builder SET query_name='Активные покупатели за 3 месяца (независимо от статуса подписки)', query_description='Все активные покупатели (которые что-то купили) за последних 3 месяца, игнорируя статус подписки' WHERE query_id=5;
 UPDATE query_builder SET query_name='Администратору', query_description='Просто письмо этому администратору' WHERE query_id=6;
 UPDATE query_builder SET query_name='Покупателям, которые не совершили покупки', query_description='Для рассылки писем всем покупателям, кто зарегистрировался, но не совершил покупку' WHERE query_id=7;
-#
-# * SQL Localization script - Translate paypal_payment_status table
-# * @package Installer
-# * @access private
-# * @copyright Copyright 2004-2009 Andrew Berezin eCommerce-Service.com
-# * @copyright Copyright 2003-2009 Zen Cart Development Team
-# * @copyright Portions Copyright 2003 osCommerce
-# * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
-# * @Localization: Andrew Berezin http://ecommerce-service.com
-# * @version $Id: mysql_27_translate_paypal_payment_status.sql 1.3.8a 17.12.2007 11:21 AndrewBerezin $
 
 # Translate data for table 'paypal_payment_status'
 UPDATE paypal_payment_status SET payment_status_name = 'Завершено' WHERE payment_status_id=1;
@@ -820,29 +733,11 @@ UPDATE paypal_payment_status SET payment_status_name = 'Запрещено' WHER
 UPDATE paypal_payment_status SET payment_status_name = 'Возмещенный' WHERE payment_status_id=5;
 UPDATE paypal_payment_status SET payment_status_name = 'Аннулирование' WHERE payment_status_id=6;
 UPDATE paypal_payment_status SET payment_status_name = 'Полностью измененный' WHERE payment_status_id=7;
-#
-# * SQL Localization script - Translate countries
-# * @package Installer
-# * @access private
-# * @copyright Copyright 2004-2016 Andrew Berezin eCommerce-Service.com
-# * @copyright Copyright 2003-2016 Zen Cart Development Team
-# * @copyright Portions Copyright 2003 osCommerce
-# * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
-# * @Localization: Andrew Berezin http://ecommerce-service.com
-# * @version $Id: mysql_30_disable_countries.sql 1.5.5a 02.08.2016 11:11:25 AndrewBerezin $
 
+# disable_countries
 UPDATE countries SET status='0' WHERE countries_iso_code_3!='RUS';
-#
-# * SQL Localization script - Translate countries
-# * @package Installer
-# * @access private
-# * @copyright Copyright 2004-2016 Andrew Berezin eCommerce-Service.com
-# * @copyright Copyright 2003-2016 Zen Cart Development Team
-# * @copyright Portions Copyright 2003 osCommerce
-# * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
-# * @Localization: Andrew Berezin http://ecommerce-service.com
-# * @version $Id: mysql_30_translate_countries.sql 1.5.5a 02.08.2016 11:11:25 AndrewBerezin $
 
+# Translate countries
 ## http://www.iso.org/iso/en/prods-services/iso3166ma/02iso-3166-code-lists/list-en1.html
 ## http://www.magnum-opus.ru/wiki/ISO-3166-1
 UPDATE countries SET countries_name='Афганистан' WHERE countries_iso_code_3='AFG';
@@ -1097,32 +992,11 @@ UPDATE countries SET countries_name='Сербия' WHERE countries_iso_code_3='S
 UPDATE countries SET countries_name='Синт-Мартен' WHERE countries_iso_code_3='SXM';
 UPDATE countries SET countries_name='Южный Судан' WHERE countries_iso_code_3='SSD';
 UPDATE countries SET countries_name='Восточный Тимор' WHERE countries_iso_code_3='TLS';
-#
-# * SQL Localization script - Translate countries
-# * @package Installer
-# * @access private
-# * @copyright Copyright 2004-2016 Andrew Berezin eCommerce-Service.com
-# * @copyright Copyright 2003-2016 Zen Cart Development Team
-# * @copyright Portions Copyright 2003 osCommerce
-# * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
-# * @Localization: Andrew Berezin http://ecommerce-service.com
-# * @version $Id: mysql_31_delete_zones.sql 1.5.5a 02.08.2016 11:11:25 AndrewBerezin $
 
+# delete_zones
 DELETE FROM zones WHERE zone_country_id NOT IN (176);
-#
-# * SQL Localization script - Add zones for Russian Federation countries
-# * @package Installer
-# * @access private
-# * @copyright Copyright 2004-2015 Andrew Berezin eCommerce-Service.com
-# * @copyright Copyright 2003-2015 Zen Cart Development Team
-# * @copyright Portions Copyright 2003 osCommerce
-# * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
-# * @link http://www.gnivc.ru/Document.aspx?id=733 Справочник "Субъекты Российской федерации" (ССРФ)
-# * @link http://www.constitution.ru/10003000/10003000-5.htm Конституция РФ, Глава 3. Федеративное устройство, Статья 65
-# * @link http://ru.wikipedia.org/wiki/Коды_субъектов_Российской_Федерации
-# * @Localization: Andrew Berezin eCommerce-Service.com
-# * @version $Id: mysql_31_zones_ru.sql 1.4 26.07.2015 15:48:40 AndrewBerezin eCommerce-Service.com $
 
+# Add zones for Russian Federation
 ALTER TABLE zones CHANGE zone_name zone_name VARCHAR(128);
 INSERT INTO zones (zone_country_id, zone_code, zone_name) VALUES (176, '01', 'Республика Адыгея (Адыгея)');
 INSERT INTO zones (zone_country_id, zone_code, zone_name) VALUES (176, '04', 'Республика Алтай');
@@ -1209,17 +1083,8 @@ INSERT INTO zones (zone_country_id, zone_code, zone_name) VALUES (176, '86', 'Х
 INSERT INTO zones (zone_country_id, zone_code, zone_name) VALUES (176, '87', 'Чукотский автономный округ');
 INSERT INTO zones (zone_country_id, zone_code, zone_name) VALUES (176, '89', 'Ямало-Ненецкий автономный округ');
 INSERT INTO zones (zone_country_id, zone_code, zone_name) VALUES (176, '92', 'Севастополь');
-#
-# * SQL Localization script - Add zones for ex-USSR countries
-# * @package Installer
-# * @access private
-# * @copyright Copyright 2004-2015 Andrew Berezin eCommerce-Service.com
-# * @copyright Copyright 2003-2015 Zen Cart Development Team
-# * @copyright Portions Copyright 2003 osCommerce
-# * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
-# * @Localization: Andrew Berezin http://ecommerce-service.com
-# * @version $Id: mysql_52_zones_ex_ussr.sql 1.2 26.07.2015 15:48:59 AndrewBerezin eCommerce-Service.com $
 
+# Add zones for ex-USSR countries
 # 'Armenia','AM','ARM'
 INSERT INTO zones (zone_country_id, zone_code, zone_name) VALUES (011, 'Араратская область', 'Араратская область');
 INSERT INTO zones (zone_country_id, zone_code, zone_name) VALUES (011, 'Армавирская область', 'Армавирская область');
@@ -1464,66 +1329,25 @@ INSERT INTO zones (zone_country_id, zone_code, zone_name) VALUES (226, 'Сырд
 INSERT INTO zones (zone_country_id, zone_code, zone_name) VALUES (226, 'Ташкентский', 'Ташкентский');
 INSERT INTO zones (zone_country_id, zone_code, zone_name) VALUES (226, 'Ферганский', 'Ферганский');
 INSERT INTO zones (zone_country_id, zone_code, zone_name) VALUES (226, 'Хорезмский', 'Хорезмский');
-#
-# * SQL Localization script - Add RU/UA geo_zones
-# * @package Installer
-# * @access private
-# * @copyright Copyright 2004-2010 Andrew Berezin eCommerce-Service.com
-# * @copyright Copyright 2003-2010 Zen Cart Development Team
-# * @copyright Portions Copyright 2003 osCommerce
-# * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
-# * @Localization: Andrew Berezin http://ecommerce-service.com
-# * @version $Id: mysql_95_geo_zones.sql 1.3.9g 30.09.2010 10:22:15 AndrewBerezin $
 
-# Russia
+# Add RU/UA geo_zones
 DELETE FROM geo_zones WHERE geo_zone_id=1;
 DELETE FROM zones_to_geo_zones WHERE geo_zone_id=1;
 INSERT INTO geo_zones (geo_zone_id, geo_zone_name, geo_zone_description, date_added) VALUES (1,'Россия','Российская Федерация', now());
 INSERT INTO zones_to_geo_zones (association_id, zone_country_id, zone_id, geo_zone_id, date_added) VALUES (NULL, 176, 0, 1, now());
-
 INSERT INTO geo_zones (geo_zone_id, geo_zone_name, geo_zone_description, date_added) VALUES (2,'Украина','Украина', now());
 INSERT INTO zones_to_geo_zones (association_id, zone_country_id, zone_id, geo_zone_id, date_added) VALUES (NULL, 220, 0, 2, now());
-
 INSERT INTO geo_zones (geo_zone_id, geo_zone_name, geo_zone_description, date_added) VALUES (3, 'Москва', 'Москва', now());
 INSERT INTO zones_to_geo_zones (association_id, zone_country_id, zone_id, geo_zone_id, date_added) VALUES (NULL, 176, 266, 3, now());
-#
-# * SQL Localization script - remove all installed shipping and payment modules
-# * @package Installer
-# * @access private
-# * @copyright Copyright 2004-2009 Andrew Berezin eCommerce-Service.com
-# * @copyright Copyright 2003-2009 Zen Cart Development Team
-# * @copyright Portions Copyright 2003 osCommerce
-# * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
-# * @Localization: Andrew Berezin http://ecommerce-service.com
-# * @version $Id: mysql_90_remove_modules.sql 1.3.8a 17.12.2007 11:19 AndrewBerezin $
 
+# delete modules
 DELETE FROM configuration WHERE configuration_group_id=6 AND configuration_key LIKE 'MODULE_SHIPPING_%' AND configuration_key != 'MODULE_SHIPPING_INSTALLED';
 UPDATE configuration SET configuration_value = '' WHERE configuration_key = 'MODULE_SHIPPING_INSTALLED';
 DELETE FROM configuration WHERE configuration_group_id=6 AND configuration_key LIKE 'MODULE_PAYMENT_%' AND configuration_key != 'MODULE_PAYMENT_INSTALLED';
 UPDATE configuration SET configuration_value = '' WHERE configuration_key = 'MODULE_PAYMENT_INSTALLED';
-#
-# * SQL Localization script - Set defaults
-# * @package Installer
-# * @access private
-# * @copyright Copyright 2004-2009 Andrew Berezin eCommerce-Service.com
-# * @copyright Copyright 2003-2009 Zen Cart Development Team
-# * @copyright Portions Copyright 2003 osCommerce
-# * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
-# * @Localization: Andrew Berezin http://ecommerce-service.com
-# * @version $Id: mysql_91_set_defaults.sql 1.3.8a 17.12.2007 10:47 AndrewBerezin $
 
 # Set RU country for Create account default country
 UPDATE configuration SET configuration_value = '176' WHERE configuration_key = 'SHOW_CREATE_ACCOUNT_DEFAULT_COUNTRY';
-#
-# * SQL Localization script - Set taxes classes and ratings
-# * @package Installer
-# * @access private
-# * @copyright Copyright 2004-2009 Andrew Berezin eCommerce-Service.com
-# * @copyright Copyright 2003-2009 Zen Cart Development Team
-# * @copyright Portions Copyright 2003 osCommerce
-# * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
-# * @Localization: Andrew Berezin http://ecommerce-service.com
-# * @version $Id: mysql_92_set_taxes.sql 1.3.8a 17.12.2007 10:47 AndrewBerezin $
 
 # Delete demo tax class and add ru/ua real tax classes
 DELETE FROM tax_class WHERE tax_class_id=1;
@@ -1538,16 +1362,6 @@ INSERT INTO tax_rates VALUES (1, 1, 1, 1, 18.0000, 'НДС 18%', NULL, now());
 INSERT INTO tax_rates VALUES (2, 1, 2, 2, 10.0000, 'НДС 10%', NULL, now());
 INSERT INTO tax_rates VALUES (3, 2, 4, 1, 20.0000, 'НДС 20%', NULL, now());
 INSERT INTO tax_rates VALUES (4, 1, 3, 3, 0.0000, 'НДС не облагается', NULL, now());
-#
-# * SQL Localization script - Set default currency and currencies rating based on RUR
-# * @package Installer
-# * @access private
-# * @copyright Copyright 2004-2009 Andrew Berezin eCommerce-Service.com
-# * @copyright Copyright 2003-2009 Zen Cart Development Team
-# * @copyright Portions Copyright 2003 osCommerce
-# * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
-# * @Localization: Andrew Berezin http://ecommerce-service.com
-# * @version $Id: mysql_93_currency.sql 1.3.8a 17.12.2007 11:07 AndrewBerezin $
 
 # Add RUR and UAH currencies (Rating based on USD).
 INSERT INTO currencies VALUES (NULL,'Рубль','RUB','','&nbsp;руб.','.',',','2',26.2314, now());
@@ -1564,32 +1378,12 @@ UPDATE currencies SET value = 0.01020807, last_updated = NOW() WHERE code = 'GBP
 UPDATE currencies SET value = 0.01905644, last_updated = NOW() WHERE code = 'CAD';
 UPDATE currencies SET value = 0.01918314, last_updated = NOW() WHERE code = 'AUD';
 UPDATE currencies SET value = 0.00378937, last_updated = NOW() WHERE code = 'UAH';
-#
-# * SQL Localization script - Add RU address_format
-# * @package Installer
-# * @access private
-# * @copyright Copyright 2004-2009 Andrew Berezin eCommerce-Service.com
-# * @copyright Copyright 2003-2009 Zen Cart Development Team
-# * @copyright Portions Copyright 2003 osCommerce
-# * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
-# * @Localization: Andrew Berezin http://ecommerce-service.com
-# * @version $Id: mysql_94_address_format.sql 1.3.9g 30.09.2010 9:48:02 11:07 AndrewBerezin $
 
 # Add RU address_format
 INSERT INTO address_format VALUES (NULL, '$firstname $lastname$cr$streets$cr $city$cr$state_name$cr$country$cr$postcode', '$city / $country');
 SET @insert_id := LAST_INSERT_ID();
 UPDATE countries SET address_format_id=@insert_id WHERE countries_iso_code_3='RUS';
 UPDATE countries SET address_format_id=@insert_id WHERE countries_iso_code_3='UKR';
-#
-# * SQL Localization script - Translate orders_status table
-# * @package Installer
-# * @access private
-# * @copyright Copyright 2004-2016 Andrew Berezin eCommerce-Service.com
-# * @copyright Copyright 2003-2016 Zen Cart Development Team
-# * @copyright Portions Copyright 2003 osCommerce
-# * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
-# * @Localization: Andrew Berezin http://ecommerce-service.com
-# * @version $Id: mysql_77_translate_demo.sql 1.5.5a 21.08.2016 0:34:28 AndrewBerezin $
 
 # Translate data for table 'orders_status'
 SELECT @languages_ru_id:=languages_id FROM languages WHERE code='ru';
@@ -1602,17 +1396,8 @@ UPDATE products_options SET products_options_name = 'Размер' WHERE product
 UPDATE products_options SET products_options_name = 'Модель' WHERE products_options_name = 'Model' AND language_id=@languages_ru_id;
 UPDATE products_options SET products_options_name = 'Память' WHERE products_options_name = 'Memory' AND language_id=@languages_ru_id;
 UPDATE products_options SET products_options_name = 'Версия' WHERE products_options_name = 'Version' AND language_id=@languages_ru_id;
-#
-# * SQL Localization script - Add RU address_format
-# * @package Installer
-# * @access private
-# * @copyright Copyright 2004-2010 Andrew Berezin eCommerce-Service.com
-# * @copyright Copyright 2003-2010 Zen Cart Development Team
-# * @copyright Portions Copyright 2003 osCommerce
-# * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
-# * @Localization: Andrew Berezin http://ecommerce-service.com
-# * @version $Id: mysql_99_tuninig.sql 1.3.9g 30.09.2010 10:23:30 AndrewBerezin $
 
+# * @version $Id: mysql_99_tuninig.sql 1.3.9g 30.09.2010 10:23:30 AndrewBerezin $
 UPDATE configuration SET configuration_value = 'True' WHERE configuration_key = 'SESSION_FORCE_COOKIE_USE' LIMIT 1 ;
 UPDATE configuration SET configuration_value = '0' WHERE configuration_key = 'META_TAG_INCLUDE_PRICE' LIMIT 1 ;
 UPDATE configuration SET configuration_value = '0' WHERE configuration_key = 'META_TAG_INCLUDE_MODEL' LIMIT 1 ;
