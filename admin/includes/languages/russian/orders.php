@@ -47,8 +47,8 @@ define('ENTRY_CUSTOMER_ADDRESS', 'Адрес покупателя:<br><i class="
 define('ENTRY_SOLD_TO', 'Продано:');
 define('ENTRY_DELIVERY_TO', 'Доставить:');
 define('ENTRY_SHIP_TO', 'Доставка:');
-define('ENTRY_SHIPPING_ADDRESS', 'Адрес доставки:');
-define('ENTRY_BILLING_ADDRESS', 'Адрес плательщика:');
+define('ENTRY_SHIPPING_ADDRESS', 'Адрес доставки:<br><i class="fa fa-2x fa-truck"></i>');
+define('ENTRY_BILLING_ADDRESS', 'Адрес плательщика:<br><i class="fa fa-2x fa-credit-card"></i>');
 define('ENTRY_PAYMENT_METHOD', 'Метод оплаты:');
 define('ENTRY_CREDIT_CARD_TYPE', 'Тип кредитной карты:');
 define('ENTRY_CREDIT_CARD_OWNER', 'Владелец кредитной карты:');
