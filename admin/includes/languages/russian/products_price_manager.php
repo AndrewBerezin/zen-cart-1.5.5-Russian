@@ -47,7 +47,7 @@ define('TEXT_PRODUCT_INFO_NONE', 'Выберите товар из ...');
   define('TEXT_PRODUCTS_QUANTITY_MAX_RETAIL','Кол-во макс:');
   define('TEXT_PRODUCTS_QUANTITY_MAX_RETAIL_EDIT','0= неограничено<br />1= нет заказа количества/или максимальное');
 
-define('TEXT_FEATURED_PRODUCT_INFO', 'Рекомендуемые товары - информация:');
+define('TEXT_FEATURED_PRODUCT_INFO', 'Рекомендованные товары-информация:');
 define('TEXT_FEATURED_PRODUCT', 'Товар:');
 define('TEXT_FEATURED_EXPIRES_DATE', 'Срок истекает:');
 define('TEXT_FEATURED_AVAILABLE_DATE', 'Доступен с:');
@@ -55,7 +55,7 @@ define('TEXT_FEATURED_PRODUCTS_STATUS', 'Статус рекомендуемог
 define('TEXT_FEATURED_PRODUCT_AVAILABLE', 'Активен');
 define('TEXT_FEATURED_PRODUCT_NOT_AVAILABLE', 'Неактивен');
 define('TEXT_FEATURED_DISABLED', '<strong>Замечание: Информация о товаре отсутствует, истек срок или неактивен статус</strong>');
-define('TEXT_FEATURED_CONFIRM_DELETE', 'Подтвердите удаление рекомендуемого товара');
+define('TEXT_FEATURED_CONFIRM_DELETE', 'Подтвердите удаление рекомендованного товара');
 
 define('TEXT_SPECIALS_PRODUCT', 'Товар:');
 define('TEXT_SPECIALS_SPECIAL_PRICE', 'Специальная цена:');
