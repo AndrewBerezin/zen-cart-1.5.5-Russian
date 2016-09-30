@@ -33,12 +33,12 @@ define('TEXT_INFO_EXPIRES_DATE', 'Срок истекает:');
 define('TEXT_INFO_STATUS_CHANGE', 'Изменение статуса:');
 define('TEXT_IMAGE_NONEXISTENT', 'Нет картинки');
 
-define('TEXT_INFO_HEADING_DELETE_FEATURED', 'Удалить товар из рекомендованных товаров');
+define('TEXT_INFO_HEADING_DELETE_FEATURED', 'Удалить товар из рекомендуемых товаров');
 define('TEXT_INFO_DELETE_INTRO', 'Вы уверены что хотите удалить этот товар?');
 
 define('SUCCESS_FEATURED_PRE_ADD', 'Успешно: Рекомендуемые. Скорректируйте даты.');
 define('WARNING_FEATURED_PRE_ADD_EMPTY', 'Предупреждение: Не указан код товара. Ничего не добавлено.');
-define('WARNING_FEATURED_PRE_ADD_DUPLICATE', 'Предупреждение: Код товара уже определён в Специальных. Ничего не добавлено.');
+define('WARNING_FEATURED_PRE_ADD_DUPLICATE', 'Предупреждение: Код товара уже определён в Рекомендуемых. Ничего не добавлено.');
 define('WARNING_FEATURED_PRE_ADD_BAD_PRODUCTS_ID', 'Предупреждение: Неверный ID товара... ничего не добавлено...');
 define('TEXT_INFO_HEADING_PRE_ADD_FEATURED', 'Вручную новый Рекомендуемый указав код товара');
 define('TEXT_INFO_PRE_ADD_INTRO', 'В больших базах данных Вы можете вручную добавлять рекомендуемые товары указаывая их код<br /><br />Лучше использовать это когда страница перезагружается слишком долго и выбирать товар из выпадающего списка слишком неудобно из-за большого объёма этого списка.');
