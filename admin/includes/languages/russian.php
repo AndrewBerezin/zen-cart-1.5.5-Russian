@@ -376,7 +376,7 @@ define('IMAGE_ICON_LINKED', 'Связанный товар');
 define('IMAGE_REMOVE_SPECIAL','Удалить скидку');
 define('IMAGE_REMOVE_FEATURED','Удалить рекомендуемый товар');
 define('IMAGE_INSTALL_SPECIAL', 'Добавить скидку');
-define('IMAGE_INSTALL_FEATURED', 'Добавить рекомендованный товар');
+define('IMAGE_INSTALL_FEATURED', 'Добавить рекомендуемый товар');
 
 define('TEXT_VERSION_CHECK_BUTTON', 'Проверить наличие новой версии');
 define('TEXT_BUTTON_RESET_ACTIVITY_LOG', 'Посмотреть лог активности');
