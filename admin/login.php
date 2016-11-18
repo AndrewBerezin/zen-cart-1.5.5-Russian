@@ -63,13 +63,13 @@ if ($expired && $message == '') $message = sprintf(ERROR_PASSWORD_EXPIRED . ' ' 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
     <html xmlns="http://www.w3.org/1999/xhtml" <?php echo HTML_PARAMS; ?>>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=<?php echo CHARSET; ?>">
+        <meta http-equiv="Content-Type" content="text/html; charset=<?php echo CHARSET; ?>"/>
         <title><?php echo TITLE; ?></title>
         <link href="includes/stylesheet.css" rel="stylesheet" type="text/css"/>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
         <meta name="robots" content="noindex, nofollow"/>
         <script language="javascript" type="text/javascript"><!--
-            function animate(f) {
+            function waiting_spinner(f) {
                 var button = document.getElementById("btn_submit");
                 var img = document.getElementById("actionImg");
                 button.style.cursor = "wait";
@@ -86,7 +86,7 @@ if ($expired && $message == '') $message = sprintf(ERROR_PASSWORD_EXPIRED . ' ' 
             <div class="row">
             <div id="loginFormDiv" class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
                 <?php
-                echo zen_draw_form('loginForm',FILENAME_LOGIN,zen_get_all_get_params(),'post','id="loginForm" onsubmit="animate(this)" class="form-horizontal"','true');
+                echo zen_draw_form('loginForm',FILENAME_LOGIN,zen_get_all_get_params(),'post','id="loginForm" onsubmit="waiting_spinner(this)" class="form-horizontal"','true');
                 echo zen_draw_hidden_field('action','do'.$_SESSION['securityToken'],'id="action1"');
                 ?>
                   <fieldset>
@@ -96,7 +96,7 @@ if ($expired && $message == '') $message = sprintf(ERROR_PASSWORD_EXPIRED . ' ' 
                           <div class="form-group">
                             <label class="col-xs-4 col-offset-xs-1 col-sm-4 col-md-6 control-label" for="admin_name-<?php echo $_SESSION['securityToken']; ?>"><?php echo TEXT_ADMIN_NAME; ?>:</label>
                             <div class="col-xs-6 col-sm-7 col-md-6">
-                              <?php echo zen_draw_input_field('admin_name', zen_output_string($admin_name), 'class="form-control" id="admin_name" autocomplete="off" autofocus placeholder="' . TEXT_ADMIN_NAME . '"'); ?>
+                              <?php echo zen_draw_input_field('admin_name', zen_output_string($admin_name), 'class="form-control" id="admin_name-' . $_SESSION['securityToken'] . '" autocomplete="off" autofocus placeholder="' . TEXT_ADMIN_NAME . '"'); ?>
                             </div>
                           </div>
                           <div class="form-group">
@@ -129,7 +129,7 @@ if ($expired && $message == '') $message = sprintf(ERROR_PASSWORD_EXPIRED . ' ' 
             <div class="row">
             <div id="loginFormDiv" class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
                 <?php
-                echo zen_draw_form('loginForm',FILENAME_LOGIN,'','post','id="loginForm" onsubmit="animate(this)" class="form-horizontal"','true');
+                echo zen_draw_form('loginForm',FILENAME_LOGIN,'','post','id="loginForm" onsubmit="waiting_spinner(this)" class="form-horizontal"','true');
                 echo zen_draw_hidden_field('action','rs'.$_SESSION['securityToken'],'id="action1"');
                 ?>
                 <fieldset>

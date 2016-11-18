@@ -8,7 +8,6 @@
  * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
  * @version GIT: $Id: Author: DrByte  Tue Aug 14 12:41:22 2012 -0400 Modified in v1.5.1 $
  */
-// BOF address_format_state_name
 
 ////
 // Returns the address_format_id for the given country
@@ -58,9 +57,6 @@
 
       if (isset($address['zone_id']) && zen_not_null($address['zone_id'])) {
         $state = zen_get_zone_code($address['country_id'], $address['zone_id'], $state);
-// BOF address_format_state_name
-        $state_name = zen_get_zone_name($address['country_id'], $address['zone_id'], $state);
-// EOF address_format_state_name
       }
     } elseif (isset($address['country']) && zen_not_null($address['country'])) {
       if (is_array($address['country'])) {
