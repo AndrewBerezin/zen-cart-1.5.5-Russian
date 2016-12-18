@@ -9,6 +9,7 @@
  * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
  * @version $Id: Author: zcwilt  Fri Apr 22 22:16:43 2015 +0000 Modified in v1.5.5 $
  */
+// BOF utf-8
 if (!defined('IS_ADMIN_FLAG')) {
   die('Illegal Access');
 }
@@ -115,8 +116,12 @@ if (!defined('IS_ADMIN_FLAG')) {
   function zen_break_string($string, $len, $break_char = '-') {
     $l = 0;
     $output = '';
-    for ($i=0, $n=strlen($string); $i<$n; $i++) {
-      $char = substr($string, $i, 1);
+// BOF utf-8
+//    for ($i=0, $n=strlen($string); $i<$n; $i++) {
+//      $char = substr($string, $i, 1);
+    for ($i=0, $n=mb_strlen($string); $i<$n; $i++) {
+      $char = mb_substr($string, $i, 1);
+// EOF utf-8
       if ($char != ' ') {
         $l++;
       } else {
@@ -270,7 +275,9 @@ if (!defined('IS_ADMIN_FLAG')) {
 ////
 // Parse search string into indivual objects
   function zen_parse_search_string($search_str = '', &$objects) {
-    $search_str = trim(strtolower($search_str));
+// BOF utf-8
+    $search_str = trim(mb_strtolower($search_str));
+// EOF utf-8
 
 // Break up $search_str on whitespace; quoted string will be reconstructed later
     $pieces = preg_split('/[[:space:]]+/', $search_str);
@@ -1073,9 +1080,13 @@ if (!defined('IS_ADMIN_FLAG')) {
     $len = (int)$len;
     if ($len == 0) return '';
     // if it's les than the size given, then return it
-    if (strlen($str) <= $len) return $str;
+// BOF utf-8
+//    if (strlen($str) <= $len) return $str;
+    if (mb_strlen($str) <= $len) return $str;
     // else get that size of text
-    $str = substr($str, 0, $len);
+//    $str = substr($str, 0, $len);
+    $str = mb_substr($str, 0, $len);
+// BOF utf-8
     // backtrack to the end of a word
     if ($str != "") {
       // check to see if there are any spaces left

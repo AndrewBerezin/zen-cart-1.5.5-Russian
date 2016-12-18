@@ -7,7 +7,7 @@
 # * @copyright Portions Copyright 2003 osCommerce
 # * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
 # * @Localization: Andrew Berezin http://ecommerce-service.com
-# * @version $Id: mysql_ru.sql 1.5.5a 22.08.2016 1:05:00 AndrewBerezin $
+# * @version $Id: mysql_ru.sql 1.5.5b 29.11.2016 12:28:40 AndrewBerezin $
 
 # alter_tables
 ALTER TABLE products_description CHANGE products_name products_name VARCHAR(255);
@@ -1368,7 +1368,7 @@ INSERT INTO currencies VALUES (NULL,'Рубль','RUB','','&nbsp;руб.','.',',
 INSERT INTO currencies VALUES (NULL,'Гривна','UAH','','грн.','.',',','2',5.05, now());
 
 # Set Default currency = RUR
-UPDATE configuration SET configuration_value='RUR' WHERE configuration_key='DEFAULT_CURRENCY';
+UPDATE configuration SET configuration_value='RUB' WHERE configuration_key='DEFAULT_CURRENCY';
 
 # Update currencies rating CBR 06.04.2016 - http://cbr.ru/currency_base/daily.asp
 UPDATE currencies SET value = 1.00000000, last_updated = NOW() WHERE code = 'RUB';
