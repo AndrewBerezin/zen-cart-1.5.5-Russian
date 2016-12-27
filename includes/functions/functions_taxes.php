@@ -156,7 +156,7 @@
   }
 ////
 // Add tax to a products price based on whether we are displaying tax "in" the price
-  function zen_add_tax($price, $tax) {
+  function zen_add_tax($price, $tax = 0) {
     global $currencies;
 
     if ( (DISPLAY_PRICE_WITH_TAX == 'true') && ($tax > 0) ) {
@@ -167,7 +167,7 @@
   }
 
  // Calculates Tax rounding the result
-  function zen_calculate_tax($price, $tax) {
+  function zen_calculate_tax($price, $tax = 0) {
     global $currencies;
     return $price * $tax / 100;
   }
