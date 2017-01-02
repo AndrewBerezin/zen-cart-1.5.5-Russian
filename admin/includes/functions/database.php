@@ -23,6 +23,7 @@
           case 'now()':
             $query .= 'now(), ';
             break;
+          case 'null':
           case 'NULL':
             $query .= 'null, ';
             break;
@@ -39,6 +40,7 @@
           case 'now()':
             $query .= $columns . ' = now(), ';
             break;
+          case 'null':
           case 'NULL':
             $query .= $columns .= ' = null, ';
             break;
