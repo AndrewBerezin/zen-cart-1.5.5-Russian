@@ -77,7 +77,7 @@ define('HEADER_TITLE_LOGOFF', 'Выход');
 // Define the name of your Gift Certificate as Gift Voucher, Gift Certificate, Zen Cart Dollars, etc. here for use through out the shop
   define('TEXT_GV_NAME','Подарочный сертификат');
   define('TEXT_GV_NAMES','Подарочные сертификаты');
-  define('TEXT_DISCOUNT_COUPON', 'Купон на скидку');
+  define('TEXT_DISCOUNT_COUPON', 'Купон');
 
 // used for redeem code, redemption code, or redemption id
   define('TEXT_GV_REDEEM','Код сертификата');
