@@ -26,7 +26,7 @@ define('TEXT_BANNERS_NEW_GROUP', ', или укажите новую групп�
 define('TEXT_BANNERS_IMAGE', 'Картинка:');
 define('TEXT_BANNERS_IMAGE_LOCAL', 'Или укажите имя загруженного файла');
 define('TEXT_BANNERS_IMAGE_TARGET', 'Загружаемую картинку <br />сохранить в директории:<br /><small>(указанная директория должна <br />заканчиваться косой чертой)</small>');
-define('TEXT_BANNER_IMAGE_TARGET_INFO', '<strong>Предлагаемое расположение картинки баннера на сервере:</strong> ' . DIR_FS_CATALOG_IMAGES . BANNER_IMAGE_TARGET);
+define('TEXT_BANNER_IMAGE_TARGET_INFO', '<strong>Предлагаемое расположение картинки баннера на сервере:</strong> ' . DIR_FS_CATALOG_IMAGES . 'banners/');
 define('TEXT_BANNERS_HTML_TEXT_INFO', '<strong>Замечание: Баннеры с HTML-кодом не учитывают клики по баннеру</strong>');
 define('TEXT_BANNERS_HTML_TEXT', 'HTML-код:');
 define('TEXT_BANNERS_ALL_SORT_ORDER', 'Порядок сортировки <br />для бокса banner_box_all');

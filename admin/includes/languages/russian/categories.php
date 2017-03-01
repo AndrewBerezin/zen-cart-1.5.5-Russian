@@ -37,7 +37,7 @@ define('TEXT_PRODUCT_MORE_INFORMATION', 'Для дополнительной и�
 define('TEXT_PRODUCT_DATE_ADDED', 'Товар был добавлен в наш каталог %s.');
 define('TEXT_PRODUCT_DATE_AVAILABLE', 'Этот товар будет в продаже с %s.');
 
-define('TEXT_EDIT_INTRO', 'Внесите необходимые изменеия');
+define('TEXT_EDIT_INTRO', 'Внесите необходимые изменения');
 define('TEXT_EDIT_CATEGORIES_ID', 'ID категории:');
 define('TEXT_EDIT_CATEGORIES_NAME', 'Название категории:');
 define('TEXT_EDIT_CATEGORIES_IMAGE', 'Картинка категории:');
@@ -198,9 +198,9 @@ define('TEXT_CATEGORIES_DESCRIPTION', 'Описание категории:');
 // Metatags
   define('TEXT_INFO_HEADING_EDIT_CATEGORY_META_TAGS', 'Мета теги описания категории');
   define('TEXT_EDIT_CATEGORIES_META_TAGS_INTRO', 'Определить мета теги');
-  define('TEXT_EDIT_CATEGORIES_META_TAGS_TITLE', 'Заголовок:');
-  define('TEXT_EDIT_CATEGORIES_META_TAGS_KEYWORDS', 'Ключевые слова:');
-  define('TEXT_EDIT_CATEGORIES_META_TAGS_DESCRIPTION', 'Описание:');
+  define('TEXT_EDIT_CATEGORIES_META_TAGS_TITLE', 'Мета-тег Заголовок страницы (title) (если не указан, то используется название категории):');
+  define('TEXT_EDIT_CATEGORIES_META_TAGS_KEYWORDS', 'Мета-тег Ключевые слова:');
+  define('TEXT_EDIT_CATEGORIES_META_TAGS_DESCRIPTION', 'Мета-тег Описание:');
 
 define('WARNING_PRODUCTS_IN_TOP_INFO', 'Внимание: У вас есть товар в верхнем уровне категории. Это может привести к неправильной оценке товара. Найденные товары: ');
 

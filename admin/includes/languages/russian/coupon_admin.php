@@ -43,7 +43,7 @@ define('TABLE_HEADING_ACTION', 'Действие');
 
 define('CUSTOMER_ID', 'ID покупателя');
 define('CUSTOMER_NAME', 'Имя покупателя');
-define('REDEEM_DATE', 'Дата погашения');
+define('REDEEM_DATE', 'Дата, до которой действует купон');
 define('IP_ADDRESS', 'IP Адрес');
 
 define('TEXT_REDEMPTIONS', 'Погашения купона');
