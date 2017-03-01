@@ -152,8 +152,8 @@ define('AUTOCHECK', 'False');
 <title><?php echo TITLE; ?></title>
 <link rel="stylesheet" type="text/css" href="includes/stylesheet.css">
 <link rel="stylesheet" type="text/css" href="includes/cssjsmenuhover.css" media="all" id="hoverJS">
-<script language="javascript" src="includes/menu.js"></script>
-<script language="javascript" src="includes/general.js"></script>
+<script type="text/javascript" src="includes/menu.js"></script>
+<script type="text/javascript" src="includes/general.js"></script>
 <script type="text/javascript">
   <!--
   function init()
@@ -171,8 +171,8 @@ define('AUTOCHECK', 'False');
   if ( ($action == 'new') || ($action == 'edit') ) {
 ?>
 <link rel="stylesheet" type="text/css" href="includes/javascript/spiffyCal/spiffyCal_v2_1.css">
-<script language="JavaScript" src="includes/javascript/spiffyCal/spiffyCal_v2_1.js"></script>
-<script language="JavaScript">
+<script type="text/javascript" src="includes/javascript/spiffyCal/spiffyCal_v2_1.js"></script>
+<script type="text/javascript">
 function session_win() {
   window.open("<?php echo zen_href_link(FILENAME_SALEMAKER_INFO); ?>","salemaker_info","height=460,width=600,scrollbars=yes,resizable=yes").focus();
 }
@@ -294,7 +294,7 @@ function SetCategories() {
       $sInfo = new objectInfo(array());
     }
 ?>
-<script language="javascript">
+<script type="text/javascript">
 var StartDate = new ctlSpiffyCalendarBox("StartDate", "sale_form", "start", "btnDate1","<?php echo (($sInfo->sale_date_start == '0001-01-01') ? '' : zen_date_short($sInfo->sale_date_start)); ?>",scBTNMODE_CUSTOMBLUE);
 var EndDate = new ctlSpiffyCalendarBox("EndDate", "sale_form", "end", "btnDate2","<?php echo (($sInfo->sale_date_end == '0001-01-01') ? '' : zen_date_short($sInfo->sale_date_end)); ?>",scBTNMODE_CUSTOMBLUE);
 </script>
@@ -326,11 +326,11 @@ var EndDate = new ctlSpiffyCalendarBox("EndDate", "sale_form", "end", "btnDate2"
           </tr>
           <tr>
             <td class="main"><?php echo TEXT_SALEMAKER_DATE_START; ?>&nbsp;</td>
-            <td class="main"><script language="javascript">StartDate.writeControl(); StartDate.dateFormat="<?php echo DATE_FORMAT_SPIFFYCAL; ?>";</script></td>
+            <td class="main"><script type="text/javascript">StartDate.writeControl(); StartDate.dateFormat="<?php echo DATE_FORMAT_SPIFFYCAL; ?>";</script></td>
           </tr>
           <tr>
             <td class="main"><?php echo TEXT_SALEMAKER_DATE_END; ?>&nbsp;</td>
-            <td class="main"><script language="javascript">EndDate.writeControl(); EndDate.dateFormat="<?php echo DATE_FORMAT_SPIFFYCAL; ?>";</script></td>
+            <td class="main"><script type="text/javascript">EndDate.writeControl(); EndDate.dateFormat="<?php echo DATE_FORMAT_SPIFFYCAL; ?>";</script></td>
           </tr>
         </table>
       </tr>
@@ -417,7 +417,7 @@ var EndDate = new ctlSpiffyCalendarBox("EndDate", "sale_form", "end", "btnDate2"
     if ($prev_categories_array[$category['categories_id']]) {
       echo '        <td>' . "\n";
 ?>
-<script language="javascript" type="text/javascript"><!--
+<script type="text/javascript" type="text/javascript"><!--
 document.write('<?php echo '<a href="javascript:popupWindow(\\\'' . zen_href_link(FILENAME_SALEMAKER_POPUP, 'cid=' . $category['categories_id']) . '\\\')">'.TEXT_MORE_INFO.'</a>'; ?>');
 //--></script>
 <?php

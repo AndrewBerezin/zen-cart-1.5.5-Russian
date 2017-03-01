@@ -79,7 +79,7 @@ $zone_string = zen_draw_pull_down_menu('zone_id', zen_get_country_zones($store_c
     <meta http-equiv="Content-Type" content="text/html; charset=<?php echo CHARSET; ?>">
     <title><?php echo TITLE; ?></title>
     <meta name="robots" content="noindex, nofollow" />
-    <script language="JavaScript" src="includes/menu.js" type="text/JavaScript"></script>
+    <script type="text/javascript" src="includes/menu.js" type="text/JavaScript"></script>
     <link href="includes/stylesheet.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" type="text/css" href="includes/cssjsmenuhover.css" media="all" id="hoverJS" />
     <link rel="stylesheet" type="text/css" href="includes/admin_access.css" />

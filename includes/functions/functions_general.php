@@ -276,11 +276,15 @@ if (!defined('IS_ADMIN_FLAG')) {
 // Parse search string into indivual objects
   function zen_parse_search_string($search_str = '', &$objects) {
 // BOF utf-8
+//    $search_str = trim(strtolower($search_str));
     $search_str = trim(mb_strtolower($search_str));
 // EOF utf-8
 
 // Break up $search_str on whitespace; quoted string will be reconstructed later
-    $pieces = preg_split('/[[:space:]]+/', $search_str);
+// BOF utf-8
+//    $pieces = preg_split('/[[:space:]]+/', $search_str);
+    $pieces = preg_split('/[[:space:]]+/u', $search_str);
+// EOF utf-8
     $objects = array();
     $tmpstring = '';
     $flag = '';
@@ -959,6 +963,7 @@ if (!defined('IS_ADMIN_FLAG')) {
           case 'now()':
             $query .= 'now(), ';
             break;
+          case 'null':
           case 'NULL':
             $query .= 'null, ';
             break;
@@ -975,6 +980,7 @@ if (!defined('IS_ADMIN_FLAG')) {
           case 'now()':
             $query .= $columns . ' = now(), ';
             break;
+          case 'null':
           case 'NULL':
             $query .= $columns . ' = null, ';
             break;
@@ -1086,7 +1092,7 @@ if (!defined('IS_ADMIN_FLAG')) {
     // else get that size of text
 //    $str = substr($str, 0, $len);
     $str = mb_substr($str, 0, $len);
-// BOF utf-8
+// EOF utf-8
     // backtrack to the end of a word
     if ($str != "") {
       // check to see if there are any spaces left
