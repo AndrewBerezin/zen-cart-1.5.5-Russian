@@ -17,14 +17,14 @@ foreach ($var as $key)
   $jsLanguageLookupArray .= "  lang[" . $key['id'] . "] = '" . $key['code'] . "';\n";
 }
 ?>
-<script type="text/javascript" src="//www.google.com/jsapi"></script>
-<script type="text/javascript">if (typeof jQuery == 'undefined') google.load("jquery", "1");</script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="includes/javascript/jquery-1.12.1.min.js"><\/script>');</script>
 <script type="text/javascript" src="../<?php echo DIR_WS_EDITORS ?>ckeditor/ckeditor.js"></script>
 <script type="text/javascript"><!--
 $(document).ready(function() {
   <?php echo $jsLanguageLookupArray ?>
   $('textarea').each(function()	{
-    if ($(this).attr('class') == 'editorHook' || ($(this).attr('name') != 'message' && $(this).attr('class') != 'noEditor'))
+    if ($(this).hasClass('editorHook') == 'editorHook' || ($(this).attr('name') != 'message' && $(this).hasClass('noEditor') != true))
     {
       index = $(this).attr('name').match(/\d+/);
       if (index == null) index = <?php echo $_SESSION['languages_id'] ?>;
