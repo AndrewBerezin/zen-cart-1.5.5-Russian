@@ -448,6 +448,7 @@ define('ERROR_DESTINATION_DOES_NOT_EXIST', 'Ошибка: Директории "
 define('ERROR_DESTINATION_NOT_WRITEABLE', 'Ошибка: Не разрешена запись в %s.');
 define('ERROR_FILE_NOT_SAVED', 'Ошибка: Загружаемый файл не сохранен.');
 define('ERROR_FILETYPE_NOT_ALLOWED', 'Ошибка: Недопустимый тип загружаемого файла %s.');
+define('ERROR_FILE_TOO_BIG', 'Предупреждение: файл превышает допустимый размер. Смотри настройки изображений.');
 define('SUCCESS_FILE_SAVED_SUCCESSFULLY', 'Успешно: Загружаемый файл %s сохранен успешно.');
 define('WARNING_NO_FILE_UPLOADED', 'Предупреждение: файл не загрузился.');
 define('WARNING_FILE_UPLOADS_DISABLED', 'Предупреждение: загрузка файлов отключена в файле конфигурации php.ini .');
