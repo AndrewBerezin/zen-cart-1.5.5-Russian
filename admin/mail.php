@@ -127,7 +127,7 @@ function init()
 // -->
 </script>
 <?php if ($editor_handler != '') include ($editor_handler); ?>
-<script type="text/javascript" type="text/javascript"><!--
+<script type="text/javascript"><!--
 var form = "";
 var submitted = false;
 var error = false;

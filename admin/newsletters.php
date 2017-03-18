@@ -105,7 +105,7 @@
   }
   // -->
 </script>
-<script type="text/javascript" type="text/javascript"><!--
+<script type="text/javascript"><!--
 var form = "";
 var submitted = false;
 var error = false;

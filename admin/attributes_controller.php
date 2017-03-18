@@ -1800,7 +1800,7 @@ if ($action == '') {
   <option selected>&lt;-- Please select an Option Name from the list ... </option>
 </select>&nbsp;</td>
 
-<script type="text/javascript" type="text/javascript"><!--
+<script type="text/javascript"><!--
   function update_option(theForm) {
     // if nothing to do, abort
     if (!theForm || !theForm.elements["options_id"] || !theForm.elements["values_id[]"]) return;
