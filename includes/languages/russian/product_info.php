@@ -9,7 +9,8 @@
  */
 
 define('TEXT_PRODUCT_NOT_FOUND', 'Этот товар к сожалению не найден!');
-define('TEXT_CURRENT_REVIEWS', 'Текущие отзывы:');
+//define('TEXT_CURRENT_REVIEWS', 'Текущие отзывы:');
+define('TEXT_CURRENT_REVIEWS', 'Отзывов:');
 define('TEXT_MORE_INFORMATION', '<a href="%s" target="blank"><u>Сайт</u></a> производителя.');
 define('TEXT_DATE_ADDED', 'Этот товар был добавлен в наш каталог %s.');
 define('TEXT_DATE_AVAILABLE', 'Этот товар будет в наличии с %s.');

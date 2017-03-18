@@ -11,7 +11,7 @@
 define('NAVBAR_TITLE_1', 'Мои настройки');
 define('NAVBAR_TITLE_2', 'Изменить пароль');
 
-define('HEADING_TITLE', 'Ваш пароль');
+define('HEADING_TITLE', 'Изменение пароля');
 
 define('MY_PASSWORD_TITLE', 'Ваш пароль');
 

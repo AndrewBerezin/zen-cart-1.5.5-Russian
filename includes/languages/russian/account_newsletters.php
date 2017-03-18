@@ -14,7 +14,8 @@ define('NAVBAR_TITLE_2', 'Рассылка');
 define('HEADING_TITLE', 'Рассылка новостей магазина');
 
 define('MY_NEWSLETTERS_TITLE', 'Рассылка новостей магазина');
-define('MY_NEWSLETTERS_GENERAL_NEWSLETTER', 'Новости магазина');
+define('MY_NEWSLETTERS_GENERAL_NEWSLETTER', 'Отметьте галочкой, если вы хотите получать рассылку');
+//define('MY_NEWSLETTERS_GENERAL_NEWSLETTER', 'Новости магазина');
 define('MY_NEWSLETTERS_GENERAL_NEWSLETTER_DESCRIPTION', 'Новости магазина, новинки, скидки и другие новости.');
 
 define('SUCCESS_NEWSLETTER_UPDATED', 'Ваша информация о подписке на рассылку обновлена.');

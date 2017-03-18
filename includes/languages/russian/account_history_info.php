@@ -16,7 +16,7 @@ define('NAVBAR_TITLE_3', 'Информация о заказах');
 define('HEADING_TITLE', 'Информация о заказах');
 
 define('HEADING_ORDER_NUMBER', 'Заказ № %s');
-define('HEADING_ORDER_DATE', 'Дата:');
+define('HEADING_ORDER_DATE', 'Дата оформления:');
 define('HEADING_ORDER_TOTAL', 'Стоимость заказа:');
 
 define('HEADING_DELIVERY_ADDRESS', 'Адрес доставки');

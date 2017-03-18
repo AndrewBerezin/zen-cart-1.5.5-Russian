@@ -26,6 +26,5 @@ define('TITLE_CONTINUE_CHECKOUT_PROCEDURE', '<strong>Завершающий ша
 define('TEXT_CONTINUE_CHECKOUT_PROCEDURE', '- подтвердите Ваш заказ. Спасибо!');
 
 define('OUT_OF_STOCK_CAN_CHECKOUT', 'Товары отмеченные ' . STOCK_MARK_PRODUCT_OUT_OF_STOCK . ' имеются на нашем складе в недостаточном для Вашего заказа количестве.<br />Тем не менее Вы можете купить их и проверить количество имеющихся в наличии для поэтапной доставки в процессе выполнения Вашего заказа.');
-define('OUT_OF_STOCK_CAN_CHECKOUT', 'Товары отмеченные ' . STOCK_MARK_PRODUCT_OUT_OF_STOCK . ' отсутствуют на складе.<br />Позиции, отсутствующие на складе, будут помещены в backorder.');
 
 // EOF

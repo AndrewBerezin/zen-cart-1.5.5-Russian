@@ -11,7 +11,7 @@
 define('NAVBAR_TITLE', 'Вход');
 define('HEADING_TITLE', 'Регистрация');
 
-define('HEADING_NEW_CUSTOMER', 'Вниманию новых покупателей:');
+define('HEADING_NEW_CUSTOMER', 'Я делаю заказ впервые');
 define('HEADING_NEW_CUSTOMER_SPLIT', 'Новые покупатели');
 
 define('TEXT_NEW_CUSTOMER_INTRODUCTION', 'Регистрация в <strong>' . STORE_NAME . '</strong> позволит Вам быстрее совершать покупки, отслеживать статус текущих заказов, просматривать свои предыдущие заказы, получать скидки.');
@@ -19,12 +19,14 @@ define('TEXT_NEW_CUSTOMER_INTRODUCTION_SPLIT', 'У Вас есть счёт в P
 define('TEXT_NEW_CUSTOMER_POST_INTRODUCTION_DIVIDER', '<span class="larger">Или</span><br />');
 define('TEXT_NEW_CUSTOMER_POST_INTRODUCTION_SPLIT', 'Создание профиля в <strong>' . STORE_NAME . '</strong> позволит Вам быстрее совершать покупки, отслеживать статус текущих заказов, просматривать свои предыдущие заказы.');
 
-define('HEADING_RETURNING_CUSTOMER', 'Если Вы уже зарегистрированы, войдите в магазин');
+define('HEADING_RETURNING_CUSTOMER', 'Я уже покупал в Вашем магазине');
+define('HEADING_RETURNING_CUSTOMER', 'Если Вы уже зарегистрированы: пожалуйста войдите в магазин');
 define('HEADING_RETURNING_CUSTOMER_SPLIT', 'Зарегистрированные покупатели');
 
 define('TEXT_RETURNING_CUSTOMER_SPLIT', 'Чтобы продолжить, пожалуйста, войдите в <strong>' . STORE_NAME . '</strong>.');
 
-define('TEXT_PASSWORD_FORGOTTEN', 'Забыли пароль?');
+//define('TEXT_PASSWORD_FORGOTTEN', 'Забыли пароль?<br />Кликните <a href="' . zen_href_link(FILENAME_PASSWORD_FORGOTTEN, '', 'SSL') . '">здесь</a> для восстановления пароля.<br />Пожалуйста не регистрируйтесь заново, если Вы регистрировались ранее, чтобы избежать ошибок.');
+define('TEXT_PASSWORD_FORGOTTEN', 'Забыли пароль?<br />Кликните <a href="' . zen_href_link(FILENAME_PASSWORD_FORGOTTEN, '', 'SSL') . '">здесь</a> для восстановления пароля.<br />Пожалуйста не регистрируйтесь заново, если Вы регистрировались ранее, чтобы избежать ошибок.');
 
 define('TEXT_LOGIN_ERROR', '<span class="bold">Ошибка</span>: Неправильно указан E-Mail или пароль.');
 define('TEXT_VISITORS_CART', '<span class="bold">Примечание:</span>&nbsp;Содержимое Вашей &quot;корзины посетителя&quot; будет объединено с содержимым Вашей &quot;постоянной корзины&quot; как только Вы подтвердите регистрацию. <a href="javascript:session_win();">[Подробнее]</a>');
