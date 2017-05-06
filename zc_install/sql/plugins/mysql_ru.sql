@@ -1370,6 +1370,7 @@ INSERT INTO currencies VALUES (NULL,'Гривна','UAH','','грн.','.',',','2
 # Set Default currency = RUR
 UPDATE configuration SET configuration_value='RUB' WHERE configuration_key='DEFAULT_CURRENCY';
 
+UPDATE configuration SET configuration_value = 'cbr' WHERE configuration_key = 'CURRENCY_SERVER_PRIMARY';
 # Update currencies rating CBR 06.04.2016 - http://cbr.ru/currency_base/daily.asp
 UPDATE currencies SET value = 1.00000000, last_updated = NOW() WHERE code = 'RUB';
 UPDATE currencies SET value = 0.01451587, last_updated = NOW() WHERE code = 'USD';
