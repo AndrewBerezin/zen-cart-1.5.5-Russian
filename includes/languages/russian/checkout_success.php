@@ -40,7 +40,7 @@ define('HEADING_TAX', 'Налог');
 define('HEADING_TOTAL', 'Итого');
 define('HEADING_QUANTITY', 'Кол-во');
 
-define('HEADING_BILLING_ADDRESS', 'Адрес платильщика');
+define('HEADING_BILLING_ADDRESS', 'Адрес плательщика');
 define('HEADING_PAYMENT_METHOD', 'Оплата');
 
 define('HEADING_ORDER_HISTORY', 'История статусов и Комментарии');
