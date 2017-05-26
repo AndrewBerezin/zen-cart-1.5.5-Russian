@@ -30,7 +30,7 @@ define('TITLE_CONTINUE_CHECKOUT_PROCEDURE', '<strong>Продолжение - ш
 define('TEXT_CONTINUE_CHECKOUT_PROCEDURE', '- подтверждение заказа.');
 
 define('TABLE_HEADING_CONDITIONS', '<span class="termsconditions">Соглашения</span>');
-define('TEXT_CONDITIONS_DESCRIPTION', '<span class="termsdescription">Пожалуйста ознакомтесь и подтвердите Ваше согласие с условиями поставки товара (поставьте отметку о том, что Вы с ними согласны). Текст Вы можете прочитать <a href="' . zen_href_link(FILENAME_CONDITIONS, '', 'SSL') . '"><span class="pseudolink">здесь</span></a>.</span>');
+define('TEXT_CONDITIONS_DESCRIPTION', '<span class="termsdescription">Пожалуйста ознакомьтесь и подтвердите Ваше согласие с условиями поставки товара (поставьте отметку о том, что Вы с ними согласны). Текст Вы можете прочитать <a href="' . zen_href_link(FILENAME_CONDITIONS, '', 'SSL') . '"><span class="pseudolink">здесь</span></a>.</span>');
 define('TEXT_CONDITIONS_CONFIRM', '<span class="termsiagree">Я прочитал и согласен с условиями поставки этого заказа.</span>');
 
 define('TEXT_CHECKOUT_AMOUNT_DUE', 'Общая сумма: ');
