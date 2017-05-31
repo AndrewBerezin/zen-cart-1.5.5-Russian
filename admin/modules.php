@@ -6,6 +6,7 @@
  * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
  * @version $Id: Merge: 880314d 5ee9f99 Author: bislewl <bislewl@gmail.com> Modified in v1.5.5 $
  */
+// BOF template override fix
 
 require('includes/application_top.php');
 if (file_exists(DIR_FS_CATALOG . 'includes/classes/dbencdata.php')) require_once(DIR_FS_CATALOG . 'includes/classes/dbencdata.php');
@@ -177,8 +178,12 @@ if (zen_not_null($action)) {
                 $installed_modules = $temp_for_sort = array();
                 for ($i = 0, $n = sizeof($directory_array); $i < $n; $i++) {
                     $file = $directory_array[$i];
-                    if (file_exists(DIR_FS_CATALOG_LANGUAGES . $_SESSION['language'] . '/modules/' . $module_type . '/' . $file)) {
-                        include(DIR_FS_CATALOG_LANGUAGES . $_SESSION['language'] . '/modules/' . $module_type . '/' . $file);
+// BOF template override fix
+//                  if (file_exists(DIR_FS_CATALOG_LANGUAGES . $_SESSION['language'] . '/modules/' . $module_type . '/' . $file)) {
+//                      include(DIR_FS_CATALOG_LANGUAGES . $_SESSION['language'] . '/modules/' . $module_type . '/' . $file);
+                    if (file_exists(zen_get_file_directory(DIR_FS_CATALOG_LANGUAGES . $_SESSION['language'] . '/modules/' . $module_type . '/', $file, 'false'))) {
+                        include(zen_get_file_directory(DIR_FS_CATALOG_LANGUAGES . $_SESSION['language'] . '/modules/' . $module_type . '/', $file, 'false'));
+// EOF template override fix
                         include($module_directory . $file);
                         $class = substr($file, 0, strrpos($file, '.'));
                         if (class_exists($class)) {

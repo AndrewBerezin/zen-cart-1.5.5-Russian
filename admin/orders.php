@@ -6,6 +6,7 @@
  * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
  * @version $Id: Author: DrByte  Sun Feb 28 02:42:59 2016 -0500 Modified in v1.5.5 $
  */
+// BOF template override fix
 
   require('includes/application_top.php');
 
@@ -190,7 +191,10 @@
         if ($order->info['payment_module_code']) {
           if (file_exists(DIR_FS_CATALOG_MODULES . 'payment/' . $order->info['payment_module_code'] . '.php')) {
             require_once(DIR_FS_CATALOG_MODULES . 'payment/' . $order->info['payment_module_code'] . '.php');
-            require_once(DIR_FS_CATALOG_LANGUAGES . $_SESSION['language'] . '/modules/payment/' . $order->info['payment_module_code'] . '.php');
+// BOF template override fix
+//          require_once(DIR_FS_CATALOG_LANGUAGES . $_SESSION['language'] . '/modules/payment/' . $order->info['payment_module_code'] . '.php');
+            require_once(zen_get_file_directory(DIR_FS_CATALOG_LANGUAGES . $_SESSION['language'] . '/modules/payment/', $order->info['payment_module_code'] . '.php', 'false'));
+// EOF template override fix
             $module = new $order->info['payment_module_code'];
             if (method_exists($module, '_doStatusUpdate')) {
               $response = $module->_doStatusUpdate($oID, $status, $comments, $customer_notified, $check_status->fields['orders_status']);
@@ -266,7 +270,10 @@
         if ($order->info['payment_module_code']) {
           if (file_exists(DIR_FS_CATALOG_MODULES . 'payment/' . $order->info['payment_module_code'] . '.php')) {
             require_once(DIR_FS_CATALOG_MODULES . 'payment/' . $order->info['payment_module_code'] . '.php');
-            require_once(DIR_FS_CATALOG_LANGUAGES . $_SESSION['language'] . '/modules/payment/' . $order->info['payment_module_code'] . '.php');
+// BOF template override fix
+//          require_once(DIR_FS_CATALOG_LANGUAGES . $_SESSION['language'] . '/modules/payment/' . $order->info['payment_module_code'] . '.php');
+            require_once(zen_get_file_directory(DIR_FS_CATALOG_LANGUAGES . $_SESSION['language'] . '/modules/payment/', $order->info['payment_module_code'] . '.php', 'false'));
+// EOF template override fix
             $module = new $order->info['payment_module_code'];
             if (method_exists($module, '_doRefund')) {
               $module->_doRefund($oID);
@@ -281,7 +288,10 @@
         if ($order->info['payment_module_code']) {
           if (file_exists(DIR_FS_CATALOG_MODULES . 'payment/' . $order->info['payment_module_code'] . '.php')) {
             require_once(DIR_FS_CATALOG_MODULES . 'payment/' . $order->info['payment_module_code'] . '.php');
-            require_once(DIR_FS_CATALOG_LANGUAGES . $_SESSION['language'] . '/modules/payment/' . $order->info['payment_module_code'] . '.php');
+// BOF template override fix
+//          require_once(DIR_FS_CATALOG_LANGUAGES . $_SESSION['language'] . '/modules/payment/' . $order->info['payment_module_code'] . '.php');
+            require_once(zen_get_file_directory(DIR_FS_CATALOG_LANGUAGES . $_SESSION['language'] . '/modules/payment/', $order->info['payment_module_code'] . '.php', 'false'));
+// EOF template override fix
             $module = new $order->info['payment_module_code'];
             if (method_exists($module, '_doAuth')) {
               $module->_doAuth($oID, $order->info['total'], $order->info['currency']);
@@ -295,7 +305,10 @@
         if ($order->info['payment_module_code']) {
           if (file_exists(DIR_FS_CATALOG_MODULES . 'payment/' . $order->info['payment_module_code'] . '.php')) {
             require_once(DIR_FS_CATALOG_MODULES . 'payment/' . $order->info['payment_module_code'] . '.php');
-            require_once(DIR_FS_CATALOG_LANGUAGES . $_SESSION['language'] . '/modules/payment/' . $order->info['payment_module_code'] . '.php');
+// BOF template override fix
+//          require_once(DIR_FS_CATALOG_LANGUAGES . $_SESSION['language'] . '/modules/payment/' . $order->info['payment_module_code'] . '.php');
+            require_once(zen_get_file_directory(DIR_FS_CATALOG_LANGUAGES . $_SESSION['language'] . '/modules/payment/', $order->info['payment_module_code'] . '.php', 'false'));
+// EOF template override fix
             $module = new $order->info['payment_module_code'];
             if (method_exists($module, '_doCapt')) {
               $module->_doCapt($oID, 'Complete', $order->info['total'], $order->info['currency']);
@@ -309,7 +322,10 @@
         if ($order->info['payment_module_code']) {
           if (file_exists(DIR_FS_CATALOG_MODULES . 'payment/' . $order->info['payment_module_code'] . '.php')) {
             require_once(DIR_FS_CATALOG_MODULES . 'payment/' . $order->info['payment_module_code'] . '.php');
-            require_once(DIR_FS_CATALOG_LANGUAGES . $_SESSION['language'] . '/modules/payment/' . $order->info['payment_module_code'] . '.php');
+// BOF template override fix
+//          require_once(DIR_FS_CATALOG_LANGUAGES . $_SESSION['language'] . '/modules/payment/' . $order->info['payment_module_code'] . '.php');
+            require_once(zen_get_file_directory(DIR_FS_CATALOG_LANGUAGES . $_SESSION['language'] . '/modules/payment/', $order->info['payment_module_code'] . '.php', 'false'));
+// EOF template override fix
             $module = new $order->info['payment_module_code'];
             if (method_exists($module, '_doVoid')) {
               $module->_doVoid($oID);
@@ -437,7 +453,10 @@ function couponpopupWindow(url) {
     if ($order->info['payment_module_code']) {
       if (file_exists(DIR_FS_CATALOG_MODULES . 'payment/' . $order->info['payment_module_code'] . '.php')) {
         require(DIR_FS_CATALOG_MODULES . 'payment/' . $order->info['payment_module_code'] . '.php');
-        require(DIR_FS_CATALOG_LANGUAGES . $_SESSION['language'] . '/modules/payment/' . $order->info['payment_module_code'] . '.php');
+// BOF template override fix
+//      require(DIR_FS_CATALOG_LANGUAGES . $_SESSION['language'] . '/modules/payment/' . $order->info['payment_module_code'] . '.php');
+        require(zen_get_file_directory(DIR_FS_CATALOG_LANGUAGES . $_SESSION['language'] . '/modules/payment/', $order->info['payment_module_code'] . '.php', 'false'));
+// EOF template override fix
         $module = new $order->info['payment_module_code'];
 //        echo $module->admin_notification($oID);
       }
