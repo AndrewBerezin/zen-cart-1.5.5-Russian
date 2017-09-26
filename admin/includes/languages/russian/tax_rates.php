@@ -26,7 +26,7 @@ define('TEXT_INFO_ZONE_NAME', 'Налоговая зона:');
 define('TEXT_INFO_TAX_RATE', 'Ставка (%):');
 define('TEXT_INFO_TAX_RATE_PRIORITY', 'Приоритет:');
 define('TEXT_INFO_RATE_DESCRIPTION', 'Описание:');
-define('TEXT_INFO_INSERT_INTRO', 'Пожалуйста внесите требуемую информацию для новой страны');
+define('TEXT_INFO_INSERT_INTRO', 'Пожалуйста, внесите требуемую информацию для новой страны');
 define('TEXT_INFO_DELETE_INTRO', 'Вы на самом деле хотите удалить страну?');
 define('TEXT_INFO_HEADING_NEW_TAX_RATE', 'Новая ставка');
 define('TEXT_INFO_HEADING_EDIT_TAX_RATE', 'Изменить');

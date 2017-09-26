@@ -354,7 +354,7 @@ define('IMAGE_RESET_PWD', 'Сбросить пароль');
 define('IMAGE_SAVE', 'Сохранить');
 define('IMAGE_SEARCH', 'Искать');
 define('IMAGE_SELECT', 'Выбрать');
-define('IMAGE_SEND', 'послать');
+define('IMAGE_SEND', 'Послать');
 define('IMAGE_SEND_EMAIL', 'Отправить E-mail');
 define('IMAGE_SUBMIT', 'Отправить');
 define('IMAGE_UNLOCK', 'Разблокировать');
@@ -457,11 +457,11 @@ define('WARNING_DATABASE_VERSION_OUT_OF_DATE','Вашу база данных н
 define('WARN_DATABASE_VERSION_PROBLEM','true'); //set to false to turn off warnings about database version mismatches
 define('WARNING_ADMIN_DOWN_FOR_MAINTENANCE', '<strong>ПРЕДУПРЕЖДЕНИЕ:</strong> В настоящий момент сайт установлен в состояние "Технические работы"...<br />Замечание: Вы не сможите тестировать большинство модулей оплаты и доставки.');
 define('WARNING_BACKUP_CFG_FILES_TO_DELETE', 'ПРЕДУПРЕЖДЕНИЕ: Эти файлы должны быть удалены из соображений безопасности: ');
-define('WARNING_INSTALL_DIRECTORY_EXISTS', 'ПРЕДУПРЕЖДЕНИЕ БЕЗОПАСНОСТИ: Директория установки обнаружена в: ' . DIR_FS_CATALOG . 'zc_install. Пожалуйста удалите эту директорию из соображений безопасности.');
-define('WARNING_CONFIG_FILE_WRITEABLE', 'ПРЕДУПРЕЖДЕНИЕ: Ваш конфигурационный файл: %s доступен на запись. Это потенциальная проблема безопасности - пожалуйста установите правильные права доступа к данному файлу (только чтение, обычно CHMOD 644 или 444).  <a href="http://tutorials.zen-cart.com/index.php?article=90" target="_blank">Смотри статью в ФАК</a>');
+define('WARNING_INSTALL_DIRECTORY_EXISTS', 'ПРЕДУПРЕЖДЕНИЕ БЕЗОПАСНОСТИ: Директория установки обнаружена в: ' . DIR_FS_CATALOG . 'zc_install. Пожалуйста, из соображений безопасности удалите эту директорию.');
+define('WARNING_CONFIG_FILE_WRITEABLE', 'ПРЕДУПРЕЖДЕНИЕ: Ваш конфигурационный файл: %s доступен на запись. Это потенциальная проблема безопасности - пожалуйста, установите правильные права доступа к данному файлу (только чтение, обычно CHMOD 644 или 444).  <a href="http://tutorials.zen-cart.com/index.php?article=90" target="_blank">Смотри статью в ФАК</a>');
 define('WARNING_COULD_NOT_LOCATE_LANG_FILE', 'ПРЕДУПРЕЖДЕНИЕ: Не могу найти языковой файл: ');
 define('ERROR_MODULE_REMOVAL_PROHIBITED', 'ОШИБКА: Удаление модуля запрещено: ');
-define('WARNING_REVIEW_ROGUE_ACTIVITY', 'ПРЕДУПРЕЖДЕНИЕ: Пожалуйста ознакомьтесь с вероятной активностью XSS:');
+define('WARNING_REVIEW_ROGUE_ACTIVITY', 'ПРЕДУПРЕЖДЕНИЕ: Пожалуйста, ознакомьтесь с вероятной активностью XSS:');
 
 define('ERROR_FILE_NOT_REMOVEABLE', 'Ошибка: Не могу удалить указанный файл. Из-за серверных ограничений Вы можете удалить файл используя ФТП.');
 define('WARNING_SESSION_AUTO_START', 'Предупреждение: включена опция session.auto_start - выключите эту опцию PHP в php.ini (возможно понадобится рестарт вебсервера для того, чтобы изменения вступили в силу).');
@@ -530,7 +530,7 @@ define('NOT_INSTALLED_TEXT','Не установлен');
   define('IMAGE_UPDATE_SORT','Обновить порядок сортировки');
   define('IMAGE_EDIT_PRODUCT','Изменить товар');
   define('IMAGE_EDIT_ATTRIBUTES','Изменить атрибуты');
-  define('TEXT_NEW_PRODUCT', 'Новый товар: &quot;%s&quot;');
+  define('TEXT_NEW_PRODUCT', 'Новый товар в категории: %s');
   define('IMAGE_OPTIONS_VALUES','Опции и значения');
   define('TEXT_PRODUCTS_PRICE_MANAGER','Центр управления ценами');
   define('TEXT_PRODUCT_EDIT','Изменить товар');
@@ -655,7 +655,7 @@ define('EMAIL_SEND_FAILED','ERROR: Ошибка при отсылке email на
 
   define('EDITOR_NONE', 'Текст');
   define('TEXT_EDITOR_INFO', 'Текстовый редактор');
-  define('ERROR_EDITORS_FOLDER_NOT_FOUND', 'Вы выбрали HTML-редактор в "Конфигурация -> Мой магазин", но директория \'/editors/\' не обнаружена. Пожалуйста отключите HTML-редактор или загрузите файлы редактора в директорию \'' . DIR_WS_CATALOG . 'editors/\'');
+  define('ERROR_EDITORS_FOLDER_NOT_FOUND', 'Вы выбрали HTML-редактор в "Конфигурация -> Мой магазин", но директория \'/editors/\' не обнаружена. Пожалуйста, отключите HTML-редактор или загрузите файлы редактора в директорию \'' . DIR_WS_CATALOG . 'editors/\'');
   define('TEXT_CATEGORIES_PRODUCTS_SORT_ORDER_INFO', 'Сортировка товаров');
   define('TEXT_SORT_PRODUCTS_SORT_ORDER_PRODUCTS_NAME', 'Сортировка товаров, Название товара');
   define('TEXT_SORT_PRODUCTS_NAME', 'Название товара');

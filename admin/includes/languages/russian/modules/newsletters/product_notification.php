@@ -12,7 +12,7 @@ define('TEXT_COUNT_CUSTOMERS', 'Покупатели, получающие ра�
 define('TEXT_PRODUCTS', 'Товары');
 define('TEXT_SELECTED_PRODUCTS', 'Выбранные товары');
 
-define('JS_PLEASE_SELECT_PRODUCTS', 'Пожалуйста выберите товары');
+define('JS_PLEASE_SELECT_PRODUCTS', 'Пожалуйста, выберите товары');
 
 define('BUTTON_GLOBAL', 'Глобально');
 define('BUTTON_SELECT', '>>>');

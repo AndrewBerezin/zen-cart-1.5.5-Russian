@@ -19,15 +19,15 @@ define('TABLE_HEADING_ACTION', 'Действие');
 
 define('TEXT_NEWSLETTER_MODULE', 'Модуль:');
 define('TEXT_NEWSLETTER_TITLE', 'Название:');
-define('TEXT_NEWSLETTER_CONTENT', 'Текст <br />Содержание:');
-define('TEXT_NEWSLETTER_CONTENT_HTML', 'Расширенный HTML текст <br />Содержание:');
+define('TEXT_NEWSLETTER_CONTENT', 'Текстовая версия:');
+define('TEXT_NEWSLETTER_CONTENT_HTML', 'HTML-версия:');
 
 define('TEXT_NEWSLETTER_DATE_ADDED', 'Дата добавления:');
 define('TEXT_NEWSLETTER_DATE_SENT', 'Дата отправки:');
 
 define('TEXT_INFO_DELETE_INTRO', '- Вы действительно хотите удалить это информационное письмо?');
 
-define('TEXT_PLEASE_WAIT', 'Пожалуйста ждите ... отправляются emails ..<br /><br />Пожалуйста не прерывайте этот процесс!<br />');
+define('TEXT_PLEASE_WAIT', 'Пожалуйста, ждите ... отправляются emails ..<br /><br />Пожалуйста, не прерывайте этот процесс!<br />');
 define('TEXT_FINISHED_SENDING_EMAILS', 'Завершение отправки e-mails!');
 
 define('TEXT_AFTER_EMAIL_INSTRUCTIONS','%s email отправлен. <br /><br />Следите за своим почтовым ящиком (' . EMAIL_FROM . ') для того чтобы увидеть:<ul><li>количество возвратов,</li><li>недействительные email адреса,</li><li>просьбы об отписке</li></ul>.');

@@ -76,7 +76,7 @@ define('ERROR_IMAGE_IS_NOT_WRITEABLE', 'Ошибка: Картинка не мо
 define('ERROR_UNKNOWN_STATUS_FLAG', 'Ошибка: Неизвестный статус баннера.');
 define('ERROR_BANNER_IMAGE_REQUIRED', 'Ошибка: Требуется картинка баннера.');
 
-define('ERROR_GRAPHS_DIRECTORY_DOES_NOT_EXIST', 'Ошибка: Директория graphs не существует. Пожалуйста создайте \'graphs\' директорию в папке \'images\'.');
+define('ERROR_GRAPHS_DIRECTORY_DOES_NOT_EXIST', 'Ошибка: Директория graphs не существует. Пожалуйста, создайте директорию \'graphs\' в папке \'images\'.');
 define('ERROR_GRAPHS_DIRECTORY_NOT_WRITEABLE', 'Ошибка: директория graphs - закрыта для записи. Измените разрешения на CMOD 777');
 
 define('TEXT_LEGEND_BANNER_ON_SSL', 'Показывать в SSL');

@@ -27,7 +27,7 @@ define('TITLE_TYPE', 'Тип:');
 define('TITLE_YEAR', 'Год:');
 define('TITLE_MONTH', 'Месяц:');
 
-define('ERROR_GRAPHS_DIRECTORY_DOES_NOT_EXIST', 'Ошибка: Поддиректория graphs не существует. Пожалуйста создайте  поддиректорию \'graphs\' в \'images\'.');
+define('ERROR_GRAPHS_DIRECTORY_DOES_NOT_EXIST', 'Ошибка: Поддиректория graphs не существует. Пожалуйста, создайте поддиректорию \'graphs\' в \'images\'.');
 define('ERROR_GRAPHS_DIRECTORY_NOT_WRITEABLE', 'Ошибка: Поддиректория graphs - закрыта для записи. Измените права доступа на 777');
 
 // EOF

@@ -14,13 +14,13 @@ define('TABLE_HEADING_LANGUAGE_NAME', 'Язык');
 define('TABLE_HEADING_LANGUAGE_CODE', 'Код');
 define('TABLE_HEADING_ACTION', 'Действия');
 
-define('TEXT_INFO_EDIT_INTRO', 'Пожалуйста внесите требуемые изменения');
+define('TEXT_INFO_EDIT_INTRO', 'Пожалуйста, внесите необходимые изменения');
 define('TEXT_INFO_LANGUAGE_NAME', 'Наименование:');
 define('TEXT_INFO_LANGUAGE_CODE', 'Код:');
 define('TEXT_INFO_LANGUAGE_IMAGE', 'Логотип:');
 define('TEXT_INFO_LANGUAGE_DIRECTORY', 'Директория:');
 define('TEXT_INFO_LANGUAGE_SORT_ORDER', 'Порядок сортировки:');
-define('TEXT_INFO_INSERT_INTRO', 'Пожалуйста внесите требуемую информацию для нового языка');
+define('TEXT_INFO_INSERT_INTRO', 'Пожалуйста, внесите требуемую информацию для нового языка');
 define('TEXT_INFO_DELETE_INTRO', 'Вы на самом деле хотите удалить язык?');
 define('TEXT_INFO_HEADING_NEW_LANGUAGE', 'Новый язык');
 define('TEXT_INFO_HEADING_EDIT_LANGUAGE', 'Редактировать');

@@ -31,7 +31,7 @@ define('TEXT_INFO_HEADING_DELETE_ZONE', 'Удалить зону');
 define('TEXT_INFO_DELETE_ZONE_INTRO', 'Вы действительно хотите удалить эту зону?');
 
 define('TEXT_INFO_HEADING_NEW_SUB_ZONE', 'Новая подзона');
-define('TEXT_INFO_NEW_SUB_ZONE_INTRO', 'Введите пожалуйста информацию по новой подзоне');
+define('TEXT_INFO_NEW_SUB_ZONE_INTRO', 'Введите, пожалуйста, информацию по новой подзоне');
 
 define('TEXT_INFO_HEADING_EDIT_SUB_ZONE', 'Редактировать подзону');
 define('TEXT_INFO_EDIT_SUB_ZONE_INTRO', 'Сделайте необходимые изменения');

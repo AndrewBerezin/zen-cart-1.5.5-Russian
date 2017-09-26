@@ -34,7 +34,7 @@
   define('OFFICE_DATE_TIME','Дата и Время:');
 
 // email disclaimer
-  define('EMAIL_DISCLAIMER', 'Этот адрес электронной почты был получен нами от одного из наших покупателей. Если Вам кажется, что этот адрес к нам попал по ошибке, пожалуйста напишите нам об этом на адрес %s');
+  define('EMAIL_DISCLAIMER', 'Этот адрес электронной почты был получен нами от одного из наших покупателей. Если Вам кажется, что этот адрес к нам попал по ошибке, пожалуйста, напишите нам об этом на адрес %s');
   define('EMAIL_SPAM_DISCLAIMER','');
   define('EMAIL_FOOTER_COPYRIGHT','Copyright (c) ' . date('Y') . ' <a href="' . zen_catalog_href_link() . '" target="_blank">' . STORE_NAME . '</a>. Powered by <a href="http://www.zen-cart.com" target="_blank">Zen Cart</a>');
   define('SEND_EXTRA_GV_ADMIN_EMAILS_TO_SUBJECT','[СЕРТИФИКАТ]');

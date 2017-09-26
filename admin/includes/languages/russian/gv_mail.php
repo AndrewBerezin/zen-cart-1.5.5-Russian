@@ -26,7 +26,7 @@ define('NOTICE_EMAIL_SENT_TO', 'Замечание: E-mail отосланы к: 
 define('ERROR_NO_CUSTOMER_SELECTED', 'Ошибка: Не выбрано ни одного покупателя.');
 define('ERROR_NO_AMOUNT_SELECTED', 'Ошибка: Не указана сумма.');
 define('ERROR_NO_SUBJECT', 'Ошибка: Не вписана тема письма.');
-define('ERROR_GV_AMOUNT', 'Пожалуйста введите сумму без символов. Например: 25.00');
+define('ERROR_GV_AMOUNT', 'Пожалуйста, введите сумму без символов. Например: 25.00');
 
 define('TEXT_GV_ANNOUNCE','<font color="#0000ff">Мы рады предложить Вам ' . TEXT_GV_NAME . '</font>');
 define('TEXT_GV_WORTH', ' ' . TEXT_GV_NAME . ' стоимостью ');

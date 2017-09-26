@@ -13,9 +13,9 @@ define('HEADING_TITLE', 'Статус заказов');
 define('TABLE_HEADING_ORDERS_STATUS', 'Статус заказов');
 define('TABLE_HEADING_ACTION', 'Действие');
 
-define('TEXT_INFO_EDIT_INTRO', 'Сделайте пожалуйста любые необходимые изменения');
+define('TEXT_INFO_EDIT_INTRO', 'Сделайте, пожалуйста, любые необходимые изменения');
 define('TEXT_INFO_ORDERS_STATUS_NAME', 'Статус заказов:');
-define('TEXT_INFO_INSERT_INTRO', 'Введите пожалуйста новый статус заказа, на основе исходных данных');
+define('TEXT_INFO_INSERT_INTRO', 'Введите, пожалуйста, новый статус заказа, на основе исходных данных');
 define('TEXT_INFO_DELETE_INTRO', 'Вы действительно хотите удалить этот статус заказа?');
 define('TEXT_INFO_HEADING_NEW_ORDERS_STATUS', 'Новый статус заказа');
 define('TEXT_INFO_HEADING_EDIT_ORDERS_STATUS', 'Изменить статус');

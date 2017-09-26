@@ -15,7 +15,7 @@ define('HEADING_TITLE_NEW_PROFILE', 'Новый профиль для ');
 define('ERROR_NO_PROFILE_DEFINED', 'Запрошенная опция не может быть выполнена без указания профиля');
 define('ERROR_NO_PROFILE_NAME', 'Пожалуйста, введите имя для нового профиля');
 define('ERROR_INVALID_PROFILE_NAME', 'Пожалуйста, введите правильное имя для нового профиля');
-define('ERROR_DUPLICATE_PROFILE_NAME', 'Профиль с таким именем уже существует. Пожалуйста выберете другое имя или отредактируйте существующий профиль');
+define('ERROR_DUPLICATE_PROFILE_NAME', 'Профиль с таким именем уже существует. Пожалуйста, выберете другое имя или отредактируйте существующий профиль');
 define('ERROR_NO_PAGES_IN_PROFILE', 'Профиль не может быть пустым, выберите какие-нибудь страницы');
 define('ERROR_UNABLE_TO_CREATE_PROFILE', 'Невозможно создать профиль');
 

@@ -15,13 +15,13 @@ define('TABLE_HEADING_COUNTRY_CODES', 'Код ISO');
 define('TABLE_HEADING_COUNTRY_STATUS', 'Статус');
 define('TABLE_HEADING_ACTION', 'Действия');
 
-define('TEXT_INFO_EDIT_INTRO', 'Пожалуйста внесите требуемые изменения');
+define('TEXT_INFO_EDIT_INTRO', 'Пожалуйста, внесите необходимые изменения');
 define('TEXT_INFO_COUNTRY_NAME', 'Название:');
 define('TEXT_INFO_COUNTRY_CODE_2', 'Код по ISO (2):');
 define('TEXT_INFO_COUNTRY_CODE_3', 'Код по ISO (3):');
 define('TEXT_INFO_ADDRESS_FORMAT', 'Формат адреса:');
 define('TEXT_INFO_COUNTRY_STATUS', 'Статус (активно для доставки?):');
-define('TEXT_INFO_INSERT_INTRO', 'Пожалуйста внесите требуемую информацию для новой страны');
+define('TEXT_INFO_INSERT_INTRO', 'Пожалуйста, внесите требуемую информацию для новой страны');
 define('TEXT_INFO_DELETE_INTRO', 'Вы на самом деле хотите удалить страну?');
 define('TEXT_INFO_HEADING_NEW_COUNTRY', 'Новая страна');
 define('TEXT_INFO_HEADING_EDIT_COUNTRY', 'Изменить');

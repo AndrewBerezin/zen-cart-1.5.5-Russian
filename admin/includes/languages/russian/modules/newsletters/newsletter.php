@@ -29,7 +29,7 @@ define('TEXT_NEWSLETTER_DATE_SENT', 'Отослано:');
 define('TEXT_INFO_DELETE_INTRO', 'Вы уверены что хотите удалить это письмо?');
 
 define('TEXT_PLEASE_SELECT_AUDIENCE','Выберите получателя этого письма: ');
-define('TEXT_PLEASE_WAIT', 'Пожалуйста подождите .. письмо отправляется ..<br /><br />Не прерывайте процесс!');
+define('TEXT_PLEASE_WAIT', 'Пожалуйста, подождите .. письмо отправляется ..<br /><br />Не прерывайте процесс!');
 define('TEXT_FINISHED_SENDING_EMAILS', 'Письмо отправлено!');
 
 define('ERROR_NEWSLETTER_TITLE', 'Ошибка: Требуется тема письма');
