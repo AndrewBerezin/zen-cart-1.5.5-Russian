@@ -22,6 +22,8 @@ if (!defined('IS_ADMIN_FLAG')) {
     }
 
     function choose_audience() {
+      global $_GET;
+
       $choose_audience_string = '<form name="audience" action="' . zen_href_link(FILENAME_NEWSLETTERS, 'page=' . $_GET['page'] . '&nID=' . $_GET['nID'] . '&action=confirm') .'" method="post" onsubmit="return check_form(audience);">' .
                  '<input type="hidden" name="securityToken" value="' . $_SESSION['securityToken'] . '" />' .
                  ' <table border="0" cellspacing="0" cellpadding="2">' . "\n" .
@@ -39,7 +41,7 @@ if (!defined('IS_ADMIN_FLAG')) {
 
 
     function confirm() {
-      global $db;
+      global $_GET, $_POST, $db;
 
     if ($_POST['audience_selected']) {
           $this->query_name=$_POST['audience_selected'];
