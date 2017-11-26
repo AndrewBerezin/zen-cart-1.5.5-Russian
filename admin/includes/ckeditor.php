@@ -24,7 +24,7 @@ foreach ($var as $key)
 $(document).ready(function() {
   <?php echo $jsLanguageLookupArray ?>
   $('textarea').each(function()	{
-    if ($(this).hasClass('editorHook') == 'editorHook' || ($(this).attr('name') != 'message' && $(this).hasClass('noEditor') != true))
+    if ($(this).hasClass('editorHook') || ($(this).attr('name') != 'message' && $(this).hasClass('noEditor') != true))
     {
       index = $(this).attr('name').match(/\d+/);
       if (index == null) index = <?php echo $_SESSION['languages_id'] ?>;
