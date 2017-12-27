@@ -39,8 +39,8 @@ define('REPORTS_ORDERS', 'Заказов');
 define('BOX_ENTRY_CUSTOMERS', 'Покупателей:');
 define('BOX_ENTRY_NEWSLETTERS', 'Подписчиков:');
 
-define('BOX_ENTRY_PRODUCTS', 'Товаров:');
-define('BOX_ENTRY_PRODUCTS_OFF', 'Товаров деактивировано:');
+define('BOX_ENTRY_PRODUCTS', 'Активных товаров:');
+define('BOX_ENTRY_PRODUCTS_OFF', 'Выключенных товаров:');
 define('BOX_ENTRY_REVIEWS', 'Отзывов:');
 define('BOX_ENTRY_REVIEWS_PENDING', 'Отзывов, ожидающих согласования:');
 
