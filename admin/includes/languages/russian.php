@@ -572,6 +572,7 @@ define('NOT_INSTALLED_TEXT','Не установлен');
   define('TEXT_VERSION_CHECK_PATCH','изменения');
   define('TEXT_VERSION_CHECK_DOWNLOAD','Загрузить здесь');
   define('TEXT_VERSION_CHECK_CURRENT','Ваша версия Zen Cart&reg; последняя.');
+  define('ERROR_CONTACTING_PROJECT_VERSION_SERVER','Ошибка: Не могу получить доступ к серверу Версий Проекта');
 
 // downloads manager
 define('TEXT_DISPLAY_NUMBER_OF_PRODUCTS_DOWNLOADS_MANAGER', 'Показано с <b>%d</b> по <b>%d</b> (из <b>%d</b> загрузок)');

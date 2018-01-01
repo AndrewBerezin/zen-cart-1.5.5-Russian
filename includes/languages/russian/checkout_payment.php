@@ -1,11 +1,10 @@
 <?php
 /**
  * @package languageDefines
- * @copyright Copyright 2003-2016 Zen Cart Development Team
+ * @copyright Copyright 2003-2017 Zen Cart Development Team
  * @copyright Portions Copyright 2003 osCommerce
  * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
- * @Localization: Andrew Berezin http://eCommerce-Service.com
- * @version $Id: Author: DrByte  Fri Sep 11 16:00:40 2015 -0400 Modified in v1.5.5 $
+ * @version $Id: Author: DrByte  Modified in v1.5.5 $
  */
 
 define('NAVBAR_TITLE_1', 'Заказ');

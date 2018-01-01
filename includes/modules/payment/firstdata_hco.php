@@ -3,7 +3,7 @@
  * First Data Hosted Checkout Payment Pages Module
  *
  * @package paymentMethod
- * @copyright Copyright 2003-2016 Zen Cart Development Team
+ * @copyright Copyright 2003-2017 Zen Cart Development Team
  * @copyright Portions Copyright 2003 osCommerce
  * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
  * @version $Id: Author: DrByte  Sat Feb 27 11:58:17 2016 -0500 New in v1.5.5 $
@@ -21,7 +21,7 @@ class firstdata_hco extends base {
   /**
    * $moduleVersion is the plugin version number
    */
-  var $moduleVersion = '1.02';
+  var $moduleVersion = '1.03';
 
   /**
    * $title is the displayed name for this payment method
@@ -195,7 +195,7 @@ class firstdata_hco extends base {
     $submit_data_core = array(
       'x_login' => html_entity_decode(MODULE_PAYMENT_FIRSTDATA_PAYMENTPAGES_PAGEID),
       'x_user3' => 'EZN001', // First Data mode
-      'x_amount' => number_format($order->info['total'], 2),
+      'x_amount' => round($order->info['total'], 2),
       'x_currency_code' => $_SESSION['currency'],
       'x_type' => MODULE_PAYMENT_FIRSTDATA_PAYMENTPAGES_AUTHORIZATION_TYPE == 'Authorize' ? 'AUTH_ONLY': 'AUTH_CAPTURE',
       'x_email_customer' => ((MODULE_PAYMENT_FIRSTDATA_PAYMENTPAGES_EMAIL_CUSTOMER == 'True') ? 'TRUE': 'FALSE'),
@@ -253,12 +253,12 @@ class firstdata_hco extends base {
     if ($order->info['currency'] != $this->gateway_currency) {
       global $currencies;
       $exchange_factor = $currencies->get_value($this->gateway_currency);
-      $submit_data_core['x_amount'] = number_format($order->info['total'] * $exchange_factor, 2);
-      if (isset($submit_data_core['x_freight'])) $submit_data_core['x_freight'] = number_format($submit_data_core['x_freight'] * $exchange_factor, 2);
-      if (isset($submit_data_core['x_tax'])) $submit_data_core['x_tax'] = number_format($submit_data_core['x_tax'] * $exchange_factor, 2);
-      if (isset($submit_data_core['discount_amount'])) $submit_data_core['discount_amount'] = number_format($submit_data_core['discount_amount'] * $exchange_factor, 2);
+      $submit_data_core['x_amount'] = round($order->info['total'] * $exchange_factor, 2);
+      if (isset($submit_data_core['x_freight'])) $submit_data_core['x_freight'] = round($submit_data_core['x_freight'] * $exchange_factor, 2);
+      if (isset($submit_data_core['x_tax'])) $submit_data_core['x_tax'] = round($submit_data_core['x_tax'] * $exchange_factor, 2);
+      if (isset($submit_data_core['discount_amount'])) $submit_data_core['discount_amount'] = round($submit_data_core['discount_amount'] * $exchange_factor, 2);
       $submit_data_core['x_currency_code'] = $this->gateway_currency;
-      $submit_data_core['x_description'] .= ' (Converted from: ' . number_format($order->info['total'] * $order->info['currency_value'], 2) . ' ' . $order->info['currency'] . ')';
+      $submit_data_core['x_description'] .= ' (Converted from: ' . round($order->info['total'] * $order->info['currency_value'], 2) . ' ' . $order->info['currency'] . ')';
     }
 
 
@@ -275,12 +275,12 @@ class firstdata_hco extends base {
       for ($i=0; $i<sizeof($order->products); $i++) {
         $p = $order->products[$i];
         // Item ID<|>Item Title<|>Item Description<|>Quantity<|>Unit Price<|>Taxable (Y or N)<|>Product Code<|>Commodity Code<|>Unit of Measure<|>Tax Rate<|>Tax Type<|>Tax Amount<|>Discount Indicator<|>Discount Amount<|>Line Item Total
-        $line = $p['model'] . $delim . $p['name'] . $delim . $p['name'] . $delim . $p['qty'] . $delim . number_format($p['final_price'] * $exchange_factor,2) . $delim;
+        $line = $p['model'] . $delim . $p['name'] . $delim . $p['name'] . $delim . $p['qty'] . $delim . round($p['final_price'] * $exchange_factor,2) . $delim;
         $line .= (is_array($p['tax_groups']) && sizeof($p['tax_groups']) ? 'Y' : 'N') . $delim;
         $line .= $product_code . $delim . $commodity_code . $delim . '' . $delim;
-        $line .= $p['tax'] . $delim . '' . number_format(zen_calculate_tax($p['final_price'] * $exchange_factor, $p['tax']),2) . $delim;
+        $line .= $p['tax'] . $delim . '' . round(zen_calculate_tax($p['final_price'] * $exchange_factor, $p['tax']),2) . $delim;
         $line .= '' . $delim . '' . $delim;
-        $line .= number_format(zen_add_tax($p['final_price'] * $exchange_factor, $p['tax']) * $p['qty'],2);
+        $line .= round(zen_add_tax($p['final_price'] * $exchange_factor, $p['tax']) * $p['qty'],2);
 
         $items .= zen_draw_hidden_field('x_line_item', $line);
         $item_log[] = $line;
@@ -384,7 +384,7 @@ class firstdata_hco extends base {
     $sql = "insert into " . TABLE_ORDERS_STATUS_HISTORY . " (comments, orders_id, orders_status_id, customer_notified, date_added) values (:orderComments, :orderID, :orderStatus, -1, now() )";
     $currency_comment = '';
     if ($order->info['currency'] != $this->gateway_currency) {
-      $currency_comment = ' (' . number_format($order->info['total'] * $currencies->get_value($this->gateway_currency), 2) . ' ' . $this->gateway_currency . ')';
+      $currency_comment = ' (' . round($order->info['total'] * $currencies->get_value($this->gateway_currency), 2) . ' ' . $this->gateway_currency . ')';
     }
     $sql = $db->bindVars($sql, ':orderComments', 'Credit Card payment.  AUTH: ' . $this->auth_code . ' TransID: ' . $this->transaction_id . ' ' . $currency_comment, 'string');
     $sql = $db->bindVars($sql, ':orderID', $insert_id, 'integer');
@@ -523,42 +523,48 @@ class firstdata_hco extends base {
 
 // for backward compatibility with older ZC versions before v152 which didn't have this function:
 if (!function_exists('plugin_version_check_for_updates')) {
-  function plugin_version_check_for_updates($plugin_file_id = 0, $version_string_to_compare = '')
+  function plugin_version_check_for_updates($plugin_file_id = 0, $version_string_to_compare = '', $strict_zc_version_compare = false)
   {
-    if ($plugin_file_id == 0) return FALSE;
-    $new_version_available = FALSE;
-    $lookup_index = 0;
+    if ($plugin_file_id == 0) return false;
+    $new_version_available = false;
+    $lookup_index = $errno = 0;
+    $response = $error = '';
     $url1 = 'https://plugins.zen-cart.com/versioncheck/'.(int)$plugin_file_id;
     $url2 = 'https://www.zen-cart.com/versioncheck/'.(int)$plugin_file_id;
 
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL,$url1);
-    curl_setopt($ch, CURLOPT_VERBOSE, 0);
-    curl_setopt($ch, CURLOPT_HEADER, false);
-    curl_setopt($ch, CURLOPT_TIMEOUT, 9);
-    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 9);
-    curl_setopt($ch, CURLOPT_USERAGENT, 'Plugin Version Check [' . (int)$plugin_file_id . '] ' . HTTP_SERVER);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    $response = curl_exec($ch);
-    $error = curl_error($ch);
-    $errno = curl_errno($ch);
+    if (function_exists('curl_init')) {
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL,$url1);
+        curl_setopt($ch, CURLOPT_VERBOSE, 0);
+        curl_setopt($ch, CURLOPT_HEADER, false);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 9);
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 9);
+        curl_setopt($ch, CURLOPT_USERAGENT, 'Plugin Version Check [' . (int)$plugin_file_id . '] ' . HTTP_SERVER);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $response = curl_exec($ch);
+        $error = curl_error($ch);
+        $errno = curl_errno($ch);
 
-    if ($error > 0) {
-      trigger_error('CURL error checking plugin versions: ' . $errno . ':' . $error . "\nTrying http instead.");
-      curl_setopt($ch, CURLOPT_URL, str_replace('tps:', 'tp:', $url1));
-      $response = curl_exec($ch);
-      $error = curl_error($ch);
-      $errno = curl_errno($ch);
+        if ($errno > 0) {
+          trigger_error('CURL error checking plugin versions: ' . $errno . ':' . $error . "\nTrying http instead.");
+          curl_setopt($ch, CURLOPT_URL, str_replace('tps:', 'tp:', $url1));
+          $response = curl_exec($ch);
+          $error = curl_error($ch);
+          $errno = curl_errno($ch);
+        }
+        if ($errno > 0) {
+          trigger_error('CURL error checking plugin versions: ' . $errno . ':' . $error . "\nTrying www instead.");
+          curl_setopt($ch, CURLOPT_URL, str_replace('tps:', 'tp:', $url2));
+          $response = curl_exec($ch);
+          $error = curl_error($ch);
+          $errno = curl_errno($ch);
+        }
+        curl_close($ch);
+    } else {
+        $errono = 9999;
+        $error = 'curl_init not found in PHP';
     }
-    if ($error > 0) {
-      trigger_error('CURL error checking plugin versions: ' . $errno . ':' . $error . "\nTrying www instead.");
-      curl_setopt($ch, CURLOPT_URL, str_replace('tps:', 'tp:', $url2));
-      $response = curl_exec($ch);
-      $error = curl_error($ch);
-      $errno = curl_errno($ch);
-    }
-    curl_close($ch);
-    if ($error > 0 || $response == '') {
+    if ($errno > 0 || $response == '') {
       trigger_error('CURL error checking plugin versions: ' . $errno . ':' . $error . "\nTrying file_get_contents() instead.");
       $ctx = stream_context_create(array('http' => array('timeout' => 5)));
       $response = file_get_contents($url1, null, $ctx);
@@ -575,9 +581,11 @@ if (!function_exists('plugin_version_check_for_updates')) {
     $data = json_decode($response, true);
     if (!$data || !is_array($data)) return false;
     // compare versions
-    if (strcmp($data[$lookup_index]['latest_plugin_version'], $version_string_to_compare) > 0) $new_version_available = TRUE;
+    if (strcmp($data[$lookup_index]['latest_plugin_version'], $version_string_to_compare) > 0) $new_version_available = true;
     // check whether present ZC version is compatible with the latest available plugin version
-    if (!in_array('v'. PROJECT_VERSION_MAJOR . '.' . PROJECT_VERSION_MINOR, $data[$lookup_index]['zcversions'])) $new_version_available = FALSE;
-    return ($new_version_available) ? $data[$lookup_index] : FALSE;
+    $zc_version = PROJECT_VERSION_MAJOR . '.' . preg_replace('/[^0-9.]/', '', PROJECT_VERSION_MINOR);
+    if ($strict_zc_version_compare) $zc_version = PROJECT_VERSION_MAJOR . '.' . PROJECT_VERSION_MINOR;
+    if (!in_array('v'. $zc_version, $data[$lookup_index]['zcversions'])) $new_version_available = false;
+    return ($new_version_available) ? $data[$lookup_index] : false;
   }
 }

@@ -8,7 +8,7 @@
  * @copyright Portions Copyright 2003 osCommerce
  * @copyright Portions adapted from http://www.data-diggers.com/
  * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
- * @version $Id: Author: zcwuilt Fri Apr 15 Modified in v1.5.5 $
+ * @version $Id: Author: zcwuilt Fri Apr 15 Modified in v1.5.5f $
  */
 if (!defined('IS_ADMIN_FLAG')) {
   die('Illegal Access');
@@ -79,7 +79,7 @@ class queryFactory extends base {
         if (!defined('DISABLE_MYSQL_TZ_SET')) {
           mysqli_query($this->link, "SET time_zone = '" . substr_replace(date("O"),":",-2,0) . "'");
         }
-        // Set MySQL mode, if one is defined before execution. Ref: https://dev.mysql.com/doc/refman/5.6/en/sql-mode.html (must be only A-Z or _ or , characters)
+        // Set MySQL mode, if one is defined before execution. Ref: https://dev.mysql.com/doc/refman/5.7/en/sql-mode.html (must be only A-Z or _ or , characters)
         if (defined('DB_MYSQL_MODE') && DB_MYSQL_MODE != '') {
           mysqli_query($this->link, "SET SESSION sql_mode = '" . preg_replace('/[^A-Z_,]/', '', DB_MYSQL_MODE) . "'");
         }
@@ -130,6 +130,10 @@ class queryFactory extends base {
   function close() {
     @mysqli_close($this->link);
     unset($this->link);
+  }
+
+  function __destruct() {
+    $this->close();
   }
 
   function set_error($zp_err_num, $zp_err_text, $dieOnErrors = true) {
@@ -286,6 +290,14 @@ class queryFactory extends base {
     }
     return($obj);
   }
+    // -----
+    // Use this form of the Execute method to ensure that any SELECT result is pulled from the
+    // database, bypassing the cache.
+    //
+    function ExecuteNoCache ($zf_sql)
+    {
+        return $this->Execute ($zf_sql, false, false, 0, true);
+    }
 
   function ExecuteRandomMulti($zf_sql, $zf_limit = 0, $zf_cache = false, $zf_cachetime=0, $remove_from_queryCache = false) {
     $this->zf_sql = $zf_sql;
@@ -345,6 +357,22 @@ class queryFactory extends base {
     $this->count_queries++;
     return($obj);
   }
+    // -----
+    // Use this form of the Execute method to ensure that any SELECT result is pulled from the
+    // database, bypassing the cache.
+    //
+    function ExecuteRandomMultiNoCache ($zf_sql)
+    {
+        return $this->ExecuteRandomMulti ($zf_sql, 0, false, 0, true);
+    }
+
+    // -----
+    // This function returns the number of rows affected by the last INSERT, UPDATE, REPLACE or DELETE query.
+    //
+    public function affectedRows()
+    {
+        return ($this->link) ? $this->link->affected_rows : 0;
+    }
 
   function insert_ID() {
     return @mysqli_insert_id($this->link);

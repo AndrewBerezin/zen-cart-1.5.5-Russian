@@ -1,14 +1,14 @@
 <?php
 /**
- * Main Russian language file for installer
- * @package Installer
- * @copyright Copyright 2003-2016 Zen Cart Development Team
- * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
- * @version $Id: Author: AndrewBerezin 03.04.2016 13:58:20 -0500 New in v1.5.5 $
- */
+* Main Russian language file for installer
+* @package Installer
+* @copyright Copyright 2003-2016 Zen Cart Development Team
+* @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
+* @version $Id: Author: AndrewBerezin 03.04.2016 13:58:20 -0500 New in v1.5.5 $
+*/
 /**
- * defining language components for the page
- */
+* defining language components for the page
+*/
 define('META_TAG_TITLE', 'Инсталляция Zen Cart&reg;');
 define('HTML_PARAMS','dir="ltr" lang="ru"');
 define('ZC_VERSION_STRING', '%s v%s');
@@ -145,14 +145,14 @@ define('TEXT_ERROR_COULD_NOT_WRITE_CONFIGFILE', 'Не могу записать 
 define('TEXT_ERROR_STORE_CONFIGURE', "Основной файл /includes/configure.php не существует (не доступен на чтение) или не доступен на запись");
 define('TEXT_ERROR_ADMIN_CONFIGURE', "Административный файл /admin/includes/configure.php не существует (не доступен на чтение) или не доступен на запись");
 define('TEXT_ERROR_PHP_VERSION', str_replace(array("\n", "\r"), '', 'Неправильная версия PHP.
-<p>Используемая Вами версия PHP (' . PHP_VERSION . ') слишком старая и данняа версия Zen Cart&reg; не может быть использована на этом сервере в указанной конфигурации.</p>
-<p>Данная версия Zen Cart&reg; совместима с версиями PHP от 5.2.9 до 7.0.<br>
-Проверьте сайт <a href="www.zen-cart.com">www.zen-cart.com</a> для получения последней версии Zen Cart&reg;.</p>
+<p>Используемая Вами версия PHP (' . PHP_VERSION . ') не подходит.</p>
+<p>Данная версия Zen Cart&reg; совместима с версиями PHP от 5.2.9 до 7.1.x.<br>
+Проверьте сайт <a href="https://www.zen-cart.com">www.zen-cart.com</a> для получения последней версии Zen Cart&reg;.</p>
 '));
 define('TEXT_ERROR_PHP_VERSION_RECOMMENDED', 'Для обеспечения максимальной безопасности и совместимости Вы должны использовать PHP %s или новее. Установка может быть продолжена, но Вы должны знать, что Ваш сайт не будет соответствовать PCI Compliant при работе на старом программном обеспечении.');
 define('TEXT_ERROR_PHP_VERSION_MIN', 'Версия PHP должна быть больше %s');
 define('TEXT_ERROR_PHP_VERSION_MAX', 'Версия PHP должна быть меньше %s');
-define('TEXT_ERROR_MYSQL_SUPPORT', 'Problems with your MySQL (mysqli) support');
+define('TEXT_ERROR_MYSQL_SUPPORT', 'Проблемы с поддержкой MySQL (mysqli). На Вашем сервер отсутствует расширение mysqli для PHP, и без него мы не можем подключиться к вашей базе данных. Обратитесь за помощью в хостинг-компанию.');
 define('TEXT_ERROR_LOG_FOLDER', 'Директория ' . DIR_FS_LOGS . ' недоступна для записи');
 define('TEXT_ERROR_CACHE_FOLDER', 'Директория ' . DIR_FS_SQL_CACHE . ' недоступна для записи');
 define('TEXT_ERROR_IMAGES_FOLDER', 'Директория /images/ недоступна для записи');
@@ -161,7 +161,7 @@ define('TEXT_ERROR_MEDIA_FOLDER', 'Директория /media/ недоступ
 define('TEXT_ERROR_PUB_FOLDER', 'Директория ' . DIR_FS_DOWNLOAD_PUBLIC . ' недоступна для записи');
 
 define('TEXT_ERROR_CONFIGURE_REQUIRES_UPDATE', 'Your configure.php file is an old version and requires updating before we can continue.');
-define('TEXT_ERROR_HTACCESS_SUPPORT', 'Problems with .htaccess support (it is not properly denying access to files that ought to be restricted).');
+define('TEXT_ERROR_HTACCESS_SUPPORT', 'Проблемы с поддержкой .htaccess (неправильно запрещает доступ к файлам, которые должны быть ограничены). [ЗАМЕЧАНИЕ: Если Вы используете Nginx, в конце установки Вам будет предоставлен набор сгенерированных файлов nginx conf, чтобы помочь в разрешении этой ситуации.]');
 define('TEXT_ERROR_SESSION_SUPPORT', 'Проблема с поддержкой сессий');
 define('TEXT_ERROR_SESSION_SUPPORT_USE_TRANS_SID', 'ini setting session.use_trans_sid is enabled');
 define('TEXT_ERROR_SESSION_SUPPORT_AUTO_START', 'ini setting session.auto_start is enabled');
